@@ -1,3 +1,5 @@
+package space.yaooxx.w3school;
+
 object ScalaFunc12 {
 
   def main(args: Array[String]) {

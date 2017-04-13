@@ -1,3 +1,5 @@
+package space.yaooxx.w3school;
+
 object CallRef {
 
   def main(args: Array[String]) {

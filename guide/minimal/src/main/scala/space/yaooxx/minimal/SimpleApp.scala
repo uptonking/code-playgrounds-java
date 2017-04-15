@@ -8,10 +8,11 @@ object SimpleApp {
 
   def main(args: Array[String]) {
 
-    val conf = new SparkConf().setAppName("SimpleApp")
+    // val conf = new SparkConf().setAppName("SimpleApp")
+    val conf = new SparkConf().setAppName("SimpleApp").setMaster("local[2]")
     val sc = new SparkContext(conf)
 
-    val logFile = "/README.md"
+    val logFile = "hdfs://localhost:9000/README.md"
     val logData = sc.textFile(logFile, 2).cache()
     val numAs = logData.filter(line => line.contains("a")).count()
     val numBs = logData.filter(line => line.contains("b")).count()

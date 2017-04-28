@@ -1,4 +1,8 @@
 *.class
+*.pom
+*.iml
 
 .git
+.idea
 target
+

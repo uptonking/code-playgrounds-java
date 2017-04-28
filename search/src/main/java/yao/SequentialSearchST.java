@@ -2,7 +2,7 @@
 package yao;
 
 /**
- * 无序链表顺序查找
+ * 链表顺序查找
  * @param <Key>
  * @param <Value>
  */

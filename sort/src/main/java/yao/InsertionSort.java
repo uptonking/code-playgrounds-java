@@ -6,36 +6,30 @@ import java.util.Scanner;
 /**
  * Created by root on 4/28/17.
  */
-public class SelectionSort {
+public class InsertionSort {
 
 //    private SelectionSort() {
 //    }
 
     public static void sort(Comparable[] a) {
         int n = a.length;
-        for (int i = 0; i < n; i++) {
-            int min = i;
-            for (int j = i + 1; j < n; j++) {
-                if (less(a[j], a[min])) {
-                    min = j;
-                }
+        for (int i = 1; i < n; i++) {
+            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
+                exch(a, j, j - 1);
             }
-            exch(a, i, min);
         }
     }
 
-    public static void sort(Object[] a, Comparator comparator) {
-        int n = a.length;
-        for (int i = 0; i < n; i++) {
-            int min = i;
-            for (int j = i + 1; j < n; j++) {
-                if (less(comparator, a[j], a[min])) min = j;
-            }
-            exch(a, i, min);
-//            assert isSorted(a, comparator, 0, i);
-        }
-//        assert isSorted(a, comparator);
-    }
+//    public static void sort(Object[] a, Comparator comparator) {
+//        int n = a.length;
+//        for (int i = 0; i < n; i++) {
+//            int min = i;
+//            for (int j = i + 1; j < n; j++) {
+//                if (less(comparator, a[j], a[min])) min = j;
+//            }
+//            exch(a, i, min);
+//        }
+//    }
 
     // is v < w ?
     private static boolean less(Comparable v, Comparable w) {

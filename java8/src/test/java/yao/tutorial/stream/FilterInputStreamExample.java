@@ -40,6 +40,7 @@ class FilterOutputStreamDemo {
     public static void main(String[] args) throws IOException {
         File file = new File("D:/cp/text.txt");
         FileOutputStream fos = new FileOutputStream(file);
+
         FilterOutputStream filterOS = new FilterOutputStream(fos);
         byte[] b = "Hello World!".getBytes();
         for(int i=0;i<b.length;i++){
@@ -54,6 +55,7 @@ class FilterInputStreamDemo {
     public static void main(String[] args) throws IOException {
         File file = new File("D:/cp/text.txt");
         FileInputStream  fis = new FileInputStream(file);
+
         FilterInputStream filterIs = new BufferedInputStream(fis);
         int i =0;
         while((i=filterIs.read())!=-1){

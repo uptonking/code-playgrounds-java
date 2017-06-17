@@ -1,6 +1,7 @@
 *.class
 *.pom
 *.iml
+*.classpath
 
 .git
 .idea

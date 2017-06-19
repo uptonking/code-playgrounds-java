@@ -3,20 +3,21 @@ package yao.step.sort;
 import java.util.List;
 
 /**
- * Created by yaoo on 6/17/17.
- * 希尔排序基于插入排序，先分组在隔h排序
+ * 希尔排序
+ * 基于插入排序，先分组再隔h排序
  */
 public class ShellSort {
 
     /**
      * int/2总能取到1,已开始每组最多2个元素
+     *
      * @param a
      * @return
      */
-    public static int[] sortArray(int[] a) {
+    public static void sortArray(int[] a) {
 
         int length = a.length;
-        for (int gap = length / 2; gap >=1; gap /= 2) {
+        for (int gap = length / 2; gap >= 1; gap /= 2) {
 
             for (int i = gap; i < length; i += gap) {
 
@@ -33,19 +34,19 @@ public class ShellSort {
             }
         }
 
-        return a;
     }
 
 
     /**
      * int/3取不到1的时候要+1，一开始每组最多3个元素
+     *
      * @param a
      * @return
      */
-    public static int[] sortArray3(int[] a) {
+    public static void sortArray3(int[] a) {
 
         int length = a.length;
-        for (int gap = (length / 3)+1; gap >=1; gap /= 3) {
+        for (int gap = (length / 3) + 1; gap >= 1; gap /= 3) {
 
             for (int i = 0; i < length; i += gap) {
 
@@ -62,11 +63,10 @@ public class ShellSort {
             }
         }
 
-        return a;
     }
 
 
-    public static int[] sortArray2(int[] a) {
+    public static void sortArray2(int[] a) {
 
         int length = a.length;
 
@@ -94,14 +94,11 @@ public class ShellSort {
             h = h / 3;
         }
 
-        return a;
 
     }
 
-    public static List<Integer> sortList(List<Integer> a) {
+    public static void sortList(List<Integer> a) {
 
-
-        return a;
     }
 
 }

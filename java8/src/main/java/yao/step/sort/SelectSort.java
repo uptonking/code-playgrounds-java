@@ -3,11 +3,12 @@ package yao.step.sort;
 import java.util.List;
 
 /**
- * Created by yaoo on 6/17/17.
+ * 选择排序
+ * 每次比较出最小的，对换到最左边
  */
 public class SelectSort {
 
-    public static int[] sortArray(int[] a) {
+    public static void sortArray(int[] a) {
 
         int length = a.length;
         for (int i = 0; i < length; i++) {
@@ -27,13 +28,11 @@ public class SelectSort {
 
         }
 
-        return a;
     }
 
-    public static List<Integer> sortList(List<Integer> a) {
+    public static void sortList(List<Integer> a) {
 
 
-        return a;
     }
 
 }

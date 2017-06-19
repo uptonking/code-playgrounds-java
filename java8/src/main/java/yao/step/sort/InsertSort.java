@@ -3,11 +3,12 @@ package yao.step.sort;
 import java.util.List;
 
 /**
- * Created by yaoo on 6/17/17.
+ * 插入排序
+ * 从第2个元素开始，依次选取一个元素两两交换到前面的有序数组
  */
 public class InsertSort {
 
-    public static int[]  sortArray(int[] a){
+    public static void  sortArray(int[] a){
 
         int length = a.length;
 
@@ -20,13 +21,11 @@ public class InsertSort {
             }
 
         }
-        return a;
     }
 
-    public static List<Integer> sortList(List<Integer> a){
+    public static void sortList(List<Integer> a){
 
 
-        return a;
     }
 
 }

@@ -3,37 +3,36 @@ package yao.step.sort;
 import java.util.List;
 
 /**
- * Created by yaoo on 6/17/17.
+ * 归并排序
+ * 先找中间位置索引，再左右递归排序，再用辅助数组归并
  */
 public class MergeSort {
 
-
-    public static int[] sortArray(int[] nums) {
-        return sortArray(nums, 0, nums.length - 1);
+    public static void sortArray(int[] nums) {
+         sortArray(nums, 0, nums.length - 1);
     }
 
     /**
-     * 时间复杂度为O(nlogn)
      *
      * @param arr 待排序数组
      * @return 输出有序数组
      */
-    public static int[] sortArray(int[] arr, int low, int high) {
-
+    public static void sortArray(int[] arr, int low, int high) {
 
         if (low < high) {
+
             //找出中间索引
             int mid = (low + high) / 2;
-            // 左边
+
+            // 先左边递归排序
             sortArray(arr, low, mid);
-            // 右边
+            // 后右边递归排序
             sortArray(arr, mid + 1, high);
-            // 左右归并
+
+            // 再用辅助数组归并排序
             merge(arr, low, mid, high);
         }
 
-
-        return arr;
     }
 
 
@@ -77,10 +76,10 @@ public class MergeSort {
     }
 
 
-    public static List<Integer> sortList(List<Integer> a) {
+    public static void sortList(List<Integer> a) {
 
 
-        return a;
+
     }
 
 }

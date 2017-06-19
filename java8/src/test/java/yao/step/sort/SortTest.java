@@ -29,21 +29,25 @@ public class SortTest {
      */
     @Test
     public void testSortArray() throws Exception {
-        int[] aa = {7,5,3,1, 8,6,4,10,2,0,-8,-1,-4,-100,-10,200,-50,30};
-//        int[] aa = {9, 1, 6, 4, 2, 1, 0, 6};
-//        int[] aa = {16,6,14,4,12,2};
-//        System.out.println(Arrays.toString(SelectSort.sortArray(aa)));
-//        System.out.println(Arrays.toString(InsertSort.sortArray(aa)));
-//        System.out.println(Arrays.toString(ShellSort.sortArray(aa)));
-//        System.out.println(Arrays.toString(ShellSort.sortArray2(aa)));
-//        System.out.println(Arrays.toString(ShellSort.sortArray3(aa)));
-//        System.out.println(Arrays.toString(MergeSort.sortArray(aa)));
-//        System.out.println(Arrays.toString(QuickSort.sortArray(aa)));
-//        System.out.println(Arrays.toString(HeapSort.sortArray(aa)));
-//        System.out.println(Arrays.toString(BubbleSort.sortArray(aa)));
-//        System.out.println(Arrays.toString(RadixSort.sortLSD(aa)));
-//        System.out.println(Arrays.toString(RadixSort.sortArray(aa)));
-        BucketSort.sortArray(aa);
+//        int[] aa = {7,5,3,1, 8,6,4,10,2,0,-8,-1,-4,-100,-10,200,-50,30};
+        int[] aa = {9, 1, 6, 4, 2, 1, 6, 100, 20, 0};
+//        int[] aa = {16, 6, 14, 4, 12, 2};
+//        SelectSort.sortArray(aa);
+//        InsertSort.sortArray(aa);
+//        ShellSort.sortArray(aa);
+//        ShellSort.sortArray2(aa);
+//        ShellSort.sortArray3(aa);
+//        MergeSort.sortArray(aa);
+//        QuickSort.sortArray(aa);
+//        HeapSort.sortArray(aa);
+//        BubbleSort.sortArray(aa);
+//        RadixSort.sortLSD(aa);
+//        RadixSort.sortArray(aa);
+//        RadixSort.sortArray(aa);
+        RadixSort.sortArray(aa);
+//        CountingSort.sortArray(aa);
+//        CountingSort.sortArray2(aa);
+
         System.out.println(Arrays.toString(aa));
     }
 

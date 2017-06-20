@@ -2,7 +2,8 @@ package yao.step.search;
 
 /**
  * 二分查找
- * 二分查找法是对一组有序的数字中进行查找，传递相应的数据，进行比较查找到与原数据相同的数据，查找到了返回1，失败返回对应的数组下标。
+ * 二分查找法是对一组有序的数字中进行查找，传递相应的数据，进行比较查找与原数据相同的数据，查找到了返回对应的数组下标，失败返回-1。
+ * 前提条件：有序
  */
 public class BinarySearch {
 
@@ -17,7 +18,7 @@ public class BinarySearch {
      * @param key
      * @param low
      * @param high
-     * @return
+     * @return 下标
      */
     public static int searchNonRecursively(int[] array, int key, int low, int high) {
 

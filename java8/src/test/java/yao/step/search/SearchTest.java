@@ -26,7 +26,7 @@ public class SearchTest {
      */
     @Test
     public void testSearchNonRecursively() throws Exception {
-//        int[] aa = {16, 6, 14, 4, 12, 2, 18, 8, 19, 9};
+//        int[] aa = {16, 6, 14, 5};
         int[] aa = {2, 4, 6, 8, 12, 14, 16, 18, 22, 24, 26, 28, 32, 34, 36, 38};
 
 //        int r1 = SequentialSearch.searchSequentially(aa, 8);
@@ -41,8 +41,14 @@ public class SearchTest {
 //        int r4 = BinarySearch.searchNonRecursively(aa, 8, 0, aa.length - 1);
 //        System.out.println(r4);
 
-        int r5 = BlockSearch.searchBlockly(aa, new int[]{8, 18, 28,38}, 34, 4);
-        System.out.println(r5);
+//        int r5 = BlockSearch.searchBlockly(aa, new int[]{8, 18, 28,38}, 34, 4);
+//        System.out.println(r5);
+
+//        int r6 = HashSearch.searchHashtable(aa, 5);
+//        System.out.println(r6);
+
+        int r7 =BinarySearchTree.searchBinaryTree(aa,14);
+        System.out.println(r7);
 
 
     }

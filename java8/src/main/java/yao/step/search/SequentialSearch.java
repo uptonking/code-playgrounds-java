@@ -10,7 +10,7 @@ public class SequentialSearch {
      *
      * @param a
      * @param key
-     * @return
+     * @return 下标
      */
     public static int searchSequentially(int[] a, int key) {
 
@@ -25,7 +25,7 @@ public class SequentialSearch {
 
     /**
      * 查找失败返回0
-     *
+     * 设置了哨兵，改变了原数组元素a[0]，不推荐使用
      * @param a
      * @param key
      * @return

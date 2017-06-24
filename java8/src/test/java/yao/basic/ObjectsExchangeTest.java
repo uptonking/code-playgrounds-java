@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 
-import static yao.basic.ObjectsExchange.swapInt;
 
 /**
  * ObjectsExchange Tester.
@@ -28,7 +27,10 @@ public class ObjectsExchangeTest {
      */
     @Test
     public void testSwapInt() throws Exception {
-        swapInt(2, 3);
+        ObjectsExchange.swapInt1(2, 3);
+        ObjectsExchange.swapInt2(2, 3);
+        ObjectsExchange.swapInt3(2, 3);
+        ObjectsExchange.swapInt4(2, 3);
     }
 
 

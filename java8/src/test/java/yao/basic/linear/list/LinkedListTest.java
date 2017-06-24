@@ -5,19 +5,19 @@ import org.junit.Before;
 import org.junit.After;
 
 /**
- * LinkedinList Tester.
+ * LinkedList Tester.
  *
  * @author <Authors name>
  * @version 1.0
  * @since <pre>Jun 23, 2017</pre>
  */
-public class LinkedinListTest {
+public class LinkedListTest {
 
-    LinkedinList<Integer> list;
+    LinkedList<Integer> list;
 
     @Before
     public void before() throws Exception {
-        list = new LinkedinList<>();
+        list = new LinkedList<>();
     }
 
     @After

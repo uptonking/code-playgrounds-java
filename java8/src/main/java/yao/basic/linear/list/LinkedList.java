@@ -1,13 +1,13 @@
 package yao.basic.linear.list;
 
 /**
- * 单链表
+ * 单向链表
  */
-public class LinkedinList<T> {
+public class LinkedList<T> {
 
     private SingleNode<T> headNode, tailNode;
 
-    public LinkedinList() {
+    public LinkedList() {
         headNode = null;
         tailNode = null;
     }
@@ -37,13 +37,14 @@ public class LinkedinList<T> {
     }
 
     public int search(T item) {
-        int index = 0;
+        int index = 1;
         SingleNode<T> currentNode = headNode;
         while (currentNode != null) {
             if (item.equals(currentNode.data)) {
                 return index;
             }
             index++;
+            currentNode = currentNode.next;
         }
         return -1;
     }
@@ -97,7 +98,7 @@ public class LinkedinList<T> {
     public SingleNode<T> removeNode(int position) {
 
         int length = size();
-        if (position < 1 || position > length + 1) {
+        if (position < 1 || position > length) {
             System.out.println("插入的位置不合法，有效位置为：1 ～ " + (length + 1));
             return headNode;
         }
@@ -145,6 +146,10 @@ public class LinkedinList<T> {
 
     }
 
+    /**
+     * 反转单向链表，非递归
+     * @return
+     */
     public SingleNode<T> reverse() {
         if (headNode == null) {
             System.out.println("链表未创建或初始化失败");
@@ -173,11 +178,12 @@ public class LinkedinList<T> {
 //            return headNode;
 //        }
 
-        //length>2
+        //length>=2
 
         while (cur != null) {
             next = cur.next;
             cur.next = pre;
+
             pre = cur;
             cur = next;
         }
@@ -186,6 +192,25 @@ public class LinkedinList<T> {
         return headNode;
 
     }
+
+//    /**
+//     * 反转单向链表，递归
+//     * @return
+//     */
+//    public SingleNode<T> reverse2() {
+//
+//        if (headNode == null) {
+//            System.out.println("链表未创建或初始化失败");
+//            return null;
+//        }
+//        if (headNode.next==null ){
+//            return headNode;
+//        }
+//
+//        SingleNode currentNode = headNode;
+//
+//        return headNode;
+//    }
 
     public void display() {
         SingleNode currentNode = headNode;

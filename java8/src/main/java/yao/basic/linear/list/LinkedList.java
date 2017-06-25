@@ -148,6 +148,7 @@ public class LinkedList<T> {
 
     /**
      * 反转单向链表，非递归
+     *
      * @return
      */
     public SingleNode<T> reverse() {
@@ -193,11 +194,46 @@ public class LinkedList<T> {
 
     }
 
+    public SingleNode<T> reverse2() {
+
+        if (headNode == null) {
+            System.out.println("链表未创建或初始化失败");
+            return null;
+        }
+
+        int length = size();
+
+        if (length <= 0) {
+            System.out.println("链表为空");
+            return null;
+        }
+
+        if (length == 1) {
+            return headNode;
+        }
+
+        SingleNode pre = null;
+        SingleNode next = null;
+        while (headNode != null) {
+            next = headNode.next;
+
+            headNode.next = pre;
+
+            pre = headNode;
+            headNode = next;
+        }
+
+        headNode = pre;
+        return headNode;
+
+    }
+
+
 //    /**
 //     * 反转单向链表，递归
 //     * @return
 //     */
-//    public SingleNode<T> reverse2() {
+//    public SingleNode<T> reverse3() {
 //
 //        if (headNode == null) {
 //            System.out.println("链表未创建或初始化失败");

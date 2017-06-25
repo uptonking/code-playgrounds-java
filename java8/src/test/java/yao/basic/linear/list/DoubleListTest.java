@@ -5,19 +5,16 @@ import org.junit.Before;
 import org.junit.After;
 
 /**
- * LinkedList Tester.
+ * DoubleList Tester.
  *
  * @author <Authors name>
  * @version 1.0
- * @since <pre>Jun 23, 2017</pre>
+ * @since <pre>Jun 25, 2017</pre>
  */
-public class LinkedListTest {
-
-    LinkedList<Integer> list;
+public class DoubleListTest {
 
     @Before
     public void before() throws Exception {
-        list = new LinkedList<>();
     }
 
     @After
@@ -57,22 +54,39 @@ public class LinkedListTest {
     }
 
     /**
-     * Method: addNode(SingleNode<T> item, int position)
+     * Method: addNode(DoubleNode<T> node, int position)
      */
     @Test
     public void testAddNode() throws Exception {
+//TODO: Test goes here... 
+    }
 
-        for (int i = 11; i < 19; i++) {
-            list.addNode(new SingleNode<Integer>(i * 10), i%10);
+    /**
+     * Method: addToTail(T item)
+     */
+    @Test
+    public void testAddToTail() throws Exception {
 
+        DoubleList<Integer> list = new DoubleList<>();
+
+        for (int i = 1; i < 9; i++) {
+            list.addToTail(i * 10);
         }
 
         list.display();
 
-        list.reverse2();
+        list.reverse();
 
         list.display();
 
+    }
+
+    /**
+     * Method: addToHead(T item)
+     */
+    @Test
+    public void testAddToHead() throws Exception {
+//TODO: Test goes here... 
     }
 
     /**
@@ -88,6 +102,22 @@ public class LinkedListTest {
      */
     @Test
     public void testClear() throws Exception {
+//TODO: Test goes here... 
+    }
+
+    /**
+     * Method: reverse()
+     */
+    @Test
+    public void testReverse() throws Exception {
+//TODO: Test goes here... 
+    }
+
+    /**
+     * Method: display()
+     */
+    @Test
+    public void testDisplay() throws Exception {
 //TODO: Test goes here... 
     }
 

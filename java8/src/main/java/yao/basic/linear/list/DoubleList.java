@@ -117,6 +117,52 @@ public class DoubleList<T> {
         return headNode;
     }
 
+    public DoubleNode<T> addToTail(T item) {
+        DoubleNode<T> node = new DoubleNode<>(item);
+
+        if (length == 0) {
+            headNode = tailNode = node;
+            length++;
+            return headNode;
+        }
+
+        if (length == 1) {
+            headNode.next = node;
+            node.pre = headNode;
+            length++;
+            return headNode;
+        }
+
+        DoubleNode<T> currentNode = headNode;
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+
+        currentNode.next = node;
+        node.pre = currentNode;
+
+        length++;
+        return headNode;
+
+    }
+
+    public DoubleNode<T> addToHead(T item) {
+        DoubleNode<T> node = new DoubleNode<>(item);
+
+        if (length == 0) {
+            headNode = tailNode = node;
+            return headNode;
+        }
+
+        node.next = headNode;
+        headNode.pre = node;
+
+        headNode = node;
+
+        return headNode;
+    }
+
+
     public DoubleNode<T> removeNode(int position) {
 
         if (position < 1 || position > length) {
@@ -199,7 +245,7 @@ public class DoubleList<T> {
 
     public void display() {
 
-        DoubleNode currentNode = headNode;
+        DoubleNode<T> currentNode = headNode;
         while (currentNode != null) {
             if (currentNode.next == null) {
                 System.out.print(currentNode.data);

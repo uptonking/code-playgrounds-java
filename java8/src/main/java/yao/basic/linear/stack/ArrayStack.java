@@ -11,13 +11,13 @@ public class ArrayStack<T> {
 
     private int capacity;
 
-    private int[] array;
+    private T[] array;
 
 
     public ArrayStack(int capacity) {
         this.top = -1;
         this.capacity = capacity;
-        this.array = new int[this.capacity];
+        this.array = (T[]) new Object[this.capacity];
     }
 
     public ArrayStack() {
@@ -27,17 +27,17 @@ public class ArrayStack<T> {
     public boolean isEmpty() {
 
 
-        return true;
+        return top == -1;
     }
 
     public boolean isFull() {
 
-        return false;
+        return top == (capacity - 1);
     }
 
     public int size() {
 
-        return -1;
+        return top + 1;
     }
 
     public void traverse() {
@@ -49,29 +49,45 @@ public class ArrayStack<T> {
         return -1;
     }
 
-    public boolean push(int x) {
-
-
-        return true;
+    public void push(T item) {
+        if (isFull()) {
+            System.out.println("栈满溢出！");
+        } else {
+            top++;
+            array[top] = item;
+        }
     }
 
-    public int pop() {
+    public T pop() {
+        if (isEmpty()) {
+            System.out.println("栈为空");
+            return null;
+        } else {
+            return array[top--];
+        }
 
-        return -1;
     }
 
-    public int peek() {
+    public T peek() {
 
-        return -1;
+        return array[top];
     }
 
-    public boolean clear() {
+    public void clear() {
 
-        return true;
+        top = -1;
     }
 
 
     public void display() {
+
+        for (int i = 0; i < capacity; i++) {
+            if (i == capacity - 1) {
+                System.out.println(array[i]);
+            } else {
+                System.out.println(array[i] + ", ");
+            }
+        }
 
         System.out.println();
     }

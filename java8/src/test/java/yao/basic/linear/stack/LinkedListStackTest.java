@@ -64,13 +64,18 @@ public class LinkedListStackTest {
 
         listStack.display();
 
-        listStack.push(4);
-        listStack.push(4);
+        listStack.push(6);
         listStack.push(4);
         listStack.push(5);
         listStack.display();
 
         listStack.pop();
+        listStack.display();
+
+        listStack.insertAtBottom(listStack,Integer.valueOf(0));
+        listStack.display();
+
+        listStack.reverseStack(listStack);
         listStack.display();
 
     }

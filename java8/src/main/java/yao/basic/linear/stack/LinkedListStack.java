@@ -109,4 +109,30 @@ public class LinkedListStack<T> {
         System.out.println();
     }
 
+
+    public void insertAtBottom(LinkedListStack<T> stack, T data) {
+        if (stack.isEmpty()) {
+            stack.push(data);
+            return;
+        }
+        T temp = stack.pop();
+        insertAtBottom(stack, data);
+        stack.push(temp);
+    }
+
+    public void reverseStack(LinkedListStack<T> stack){
+        if (stack.isEmpty()){
+            return;
+        }
+        T temp = stack.pop();
+
+        reverseStack(stack);
+
+        insertAtBottom(stack,temp);
+
+    }
+
+
+
+
 }

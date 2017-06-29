@@ -45,6 +45,9 @@ public class BinaryTreeTest {
         binaryTree.levelOrderTraverse(rootNode);
         System.out.println();
 
+        System.out.println("------------------------------");
+
+
         binaryTree.preOrderTraverse(rootNode);
         System.out.println();
 
@@ -53,6 +56,7 @@ public class BinaryTreeTest {
 
         binaryTree.postOrderTraverse(rootNode);
         System.out.println();
+        System.out.println("------------------------------");
 
         binaryTree.preOrderTraverse1(rootNode);
         System.out.println();
@@ -65,6 +69,10 @@ public class BinaryTreeTest {
 
         binaryTree.postOrderTraverse1(rootNode);
         System.out.println();
+
+//        binaryTree.postOrderNonRecursive(rootNode);
+//        System.out.println();
+
 
     }
 

@@ -46,8 +46,10 @@ public class BinaryTree<T> {
         Queue<BinaryTreeNode<T>> queue = new LinkedList<>();
         queue.add(rootNode);
 
+        BinaryTreeNode<T> temp;
+
         while (!queue.isEmpty()) {
-            BinaryTreeNode<T> temp = queue.poll();
+            temp = queue.poll();
             System.out.print(temp.data + ", ");
             if (temp.left != null) {
                 queue.add(temp.left);
@@ -244,9 +246,70 @@ public class BinaryTree<T> {
 
             System.out.print(node.data + ", ");
         }
+
     }
 
 
+    /**
+     * 非递归后序遍历
+     * ！！！测试失败
+     * 完成遍历左子树之后，需要访问当前节点，之后遍历完成右子树还需要访问该当前节点。只有在第二次访问时才处理当前节点。
+     * 如何区分两次访问？
+     * 方法：当元素出栈时，检查这个元素与栈顶元素的右子节点是否相同。若相同，则说明已经完成左、右子树遍历，此时只需要将栈顶元素出栈输出。
+     *
+     * @param root 二叉树根节点
+     */
+    public void postOrderNonRecursive(BinaryTreeNode<T> root) {
+        // 根节点为null，不作处理，直接结束
+        if (root == null) {
+            return;
+        }
+        // 创建栈存储节点
+        Stack<BinaryTreeNode<T>> stack = new Stack<>();
+
+        // 遍历
+        while (root!=null||!stack.isEmpty()) {
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                // 栈为空，结束程序
+                if (stack.isEmpty()) {
+                    stack.clear();
+                    return;
+                } else {
+                    // 如果右子树为空，说明栈顶元素是叶子节点
+                    if (stack.peek().right == null) {
+                        root = stack.pop();
+                        System.out.print(root.data + " ");
+                        // 判断左右子树是否遍历完
+                        if (root == stack.peek().right) {
+                            System.out.print(stack.peek().data + " ");
+                            root = stack.pop();
+                        }
+                    }
+                }
+
+                if (!stack.isEmpty()) {
+                    // 判断根节点左右子树是否遍历完
+                    if (root == stack.peek().right) {
+                        System.out.print(stack.peek().data + " ");
+                        stack.pop();
+                        root = null;
+                    } else {
+                        root = stack.peek().right;
+                    }
+                } else {
+                    root = null;
+                }
+            }
+        }
+    }
 
 
 }
+
+
+
+
+

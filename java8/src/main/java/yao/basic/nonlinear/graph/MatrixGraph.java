@@ -34,10 +34,10 @@ public class MatrixGraph<T> {
         //初始化图的边矩阵
         adjMatrix = new int[vlen][vlen];
         for (int i = 0; i < elen; i++) {
-            int p1 = getIndex(edges[i][0]);
-            int p2 = getIndex(edges[i][1]);
+            int from = getIndex(edges[i][0]);
+            int to = getIndex(edges[i][1]);
 
-            adjMatrix[p1][p2] = 1;
+            adjMatrix[from][to] = 1;
         }
     }
 
@@ -92,22 +92,6 @@ public class MatrixGraph<T> {
         return -1;
     }
 
-    /**
-     * 遍历一个顶点的所有邻接顶点
-     *
-     * @param i
-     * @param visited
-     */
-    public void dfsVertex(int i, boolean[] visited) {
-        visited[i] = true;
-        System.out.printf("%s ", vertexArr[i]);
-        ///遍历i的所有邻接顶点
-        for (int w = firstVertex(i); w >= 0; w = nextVertex(i, w)) {
-            if (!visited[w]) {
-                dfsVertex(w, visited);
-            }
-        }
-    }
 
     /**
      * 深度优先搜索图，递归
@@ -128,7 +112,25 @@ public class MatrixGraph<T> {
                 dfsVertex(i, visited);
             }
         }
+        System.out.println();
 
+    }
+
+    /**
+     * 遍历一个顶点的所有邻接顶点
+     *
+     * @param i
+     * @param visited
+     */
+    public void dfsVertex(int i, boolean[] visited) {
+        visited[i] = true;
+        System.out.printf("%s ", vertexArr[i]);
+        ///遍历i的所有邻接顶点
+        for (int w = firstVertex(i); w >= 0; w = nextVertex(i, w)) {
+            if (!visited[w]) {
+                dfsVertex(w, visited);
+            }
+        }
     }
 
     public void dfsNonRecursively() {
@@ -164,7 +166,7 @@ public class MatrixGraph<T> {
 
             }
         }
-
+        System.out.println();
 
     }
 
@@ -220,6 +222,7 @@ public class MatrixGraph<T> {
 
                     int cur = queue.remove();
 
+                    //找不到邻接点时会返回-1
                     for (int j = firstVertex(cur); j >= 0; j = nextVertex(cur, j)) {
 
                         ///这里打印其他所有顶点
@@ -229,13 +232,10 @@ public class MatrixGraph<T> {
                             System.out.print(vertexArr[j] + " ");
                         }
                     }
-
-
                 }
-
             }
         }
-
+        System.out.println();
     }
 
 
@@ -274,13 +274,12 @@ public class MatrixGraph<T> {
             }
         }
         System.out.println();
-
     }
 
     public void display() {
         for (int i = 0; i < vertexArr.length; i++) {
             for (int j = 0; j < vertexArr.length; j++) {
-                System.out.printf("%d", adjMatrix[i][j]);
+                System.out.printf("%d ", adjMatrix[i][j]);
             }
             System.out.println();
         }

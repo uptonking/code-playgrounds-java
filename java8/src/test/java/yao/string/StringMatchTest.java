@@ -30,13 +30,17 @@ public class StringMatchTest {
         String s1 = "bbc abcdab abcdabcdabde";
         String p1 = "abcdabd";
 
+        String s2 = " abccd bcdde";
+        String p2 = " bcd";
+
         StringMatch matcher = new StringMatch();
 
         int a1 = matcher.matchViolently(s1, p1);
         System.out.println(a1);
 
 
-        int a2 = matcher.matchKMP(s1, p1);
+//        int a2 = matcher.matchKMP(s1, p1);
+        int a2 = matcher.matchKMP(s2, p2);
         System.out.println(a2);
 
 

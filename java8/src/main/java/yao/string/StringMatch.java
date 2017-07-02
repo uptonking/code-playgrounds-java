@@ -7,7 +7,7 @@ public class StringMatch {
 
     /**
      * 暴力匹配
-     * 源字符串每次移动1位
+     * 模式字符串相对于源字符串每次右移1位
      *
      * @param strS
      * @param strP
@@ -42,6 +42,7 @@ public class StringMatch {
 
     /**
      * Knuth-Morris-Pratt 字符串查找算法
+     * 模式字符串相对于源字符串每次右移j-next[j]位
      *
      * @param strS
      * @param strP
@@ -75,6 +76,7 @@ public class StringMatch {
 
     /**
      * 根据模式字符串计算部分匹配表
+     * 返回的next数组的元素是除当前字符外的前后缀公共元素长度的最大值，首元素为-1
      * 前缀是除最后一个字符外的所有含头部字符的组合，后缀是除第一个字符外的所有含尾部字符的组合
      *
      * @param p
@@ -84,8 +86,10 @@ public class StringMatch {
 
         int pLen = p.length;
 
-        //存储各字符的前后缀共有元素长度的最大值
+        //优化后的部分匹配表
         int[] next = new int[pLen];
+
+        next[0] = -1;
 
         int k = -1;
         int j = 0;
@@ -96,9 +100,13 @@ public class StringMatch {
                 ++k;
                 ++j;
 
+                ///next数组需要优化，当p[j]=p[next[j]]时，可能出现s[i]！=p[next[j]]再次失配的情况
+                //next[j] = k;
+
                 if (p[j] != p[k]) {
                     next[j] = k;
                 } else {
+                    //因为不能出现p[j] = p[ next[j ]]，所以当出现时需要继续递归，k = next[k] = next[next[k]]
                     next[j] = next[k];
                 }
 
@@ -106,7 +114,6 @@ public class StringMatch {
                 k = next[k];
             }
         }
-        next[0] = -1;
 
         return next;
     }

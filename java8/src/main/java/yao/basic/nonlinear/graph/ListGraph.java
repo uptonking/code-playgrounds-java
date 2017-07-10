@@ -23,7 +23,7 @@ class ListNode {
  */
 class VertexNode<T> {
     //顶点数据
-    T data;
+T data;
     //该顶点邻接的第一点
     ListNode firstNode;
 
@@ -271,4 +271,3 @@ public class ListGraph<T> {
 
 
 }
-

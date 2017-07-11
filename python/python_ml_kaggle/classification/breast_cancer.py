@@ -54,3 +54,5 @@ coef = lr.coef_[0, :]
 ly = (-intercept - coef[0] * lx) / coef[1]
 plt.plot(lx, ly, c='green')
 plt.show()
+
+

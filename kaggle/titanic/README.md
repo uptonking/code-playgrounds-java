@@ -1,8 +1,12 @@
 # Titanic: Machine Learning from Disaster
 [Competition by Kaggle](https://www.kaggle.com/c/titanic)
 
+
+## target
+predict whether each passenger had survived or not in the testing set
+
 ## data
-#### train 891条
+#### train 891
 1. PassengerId 1
 2. Survived 0
 3. Pclass 3
@@ -20,11 +24,11 @@ Age-714
 Cabin-204
 Embarked-889
 
-#### test 418条
+#### test 418
 
 少Survived
 
-#### submit 418条
+#### submit 418
 1. PassengerId
 2. Survived
 

@@ -2,8 +2,11 @@
 *.pom
 *.iml
 *.classpath
-
+.project
 .git
 .idea
+
+
 target
+node_modules
 

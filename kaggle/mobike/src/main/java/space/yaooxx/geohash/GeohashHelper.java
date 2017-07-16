@@ -10,11 +10,16 @@ public class GeohashHelper {
     //Geohash默认格网划分次数为8次，误差19m左右
     private static int DEFAULT_LEVEL = 8;
 
-    public static String convertLnglat2Geohash(double lng, double lat) {
-        return convertLnglat2Geohash(lng, lat, DEFAULT_LEVEL);
-    }
-
+    /**
+     * 经纬度转geohash编码
+     *
+     * @param lng
+     * @param lat
+     * @param level 指定编码长度
+     * @return geohash编码字符串
+     */
     public static String convertLnglat2Geohash(double lng, double lat, int level) {
+
         int len = level * 5;
 
         double lngMax = 180;
@@ -25,8 +30,9 @@ public class GeohashHelper {
         int[] geoBin = new int[len];
 
         for (int i = 0; i < len; i++) {
-            //偶数 经度
+
             if ((i | 1) != i) {
+                ///偶数 经度
                 double lngMid = (lngMax + lngMin) / 2;
                 if (lng > lngMid) {
                     geoBin[i] = 1;
@@ -35,8 +41,9 @@ public class GeohashHelper {
                     geoBin[i] = 0;
                     lngMax = lngMid;
                 }
-                //奇数 纬度
             } else {
+
+                ///奇数 纬度
                 double latMid = (latMax + latMin) / 2;
                 if (lat > latMid) {
                     geoBin[i] = 1;
@@ -48,6 +55,10 @@ public class GeohashHelper {
             }
         }
         return Base32.encode(geoBin);
+    }
+
+    public static String convertLnglat2Geohash(double lng, double lat) {
+        return convertLnglat2Geohash(lng, lat, DEFAULT_LEVEL);
     }
 
     public static Point toGPS(String geohash) {

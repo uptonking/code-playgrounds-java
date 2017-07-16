@@ -14,6 +14,15 @@
 	</properties>
 
 	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/com.github.lwhite1/tablesaw -->
+		<dependency>
+			<groupId>com.github.lwhite1</groupId>
+			<artifactId>tablesaw</artifactId>
+			<version>0.7.7.3</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

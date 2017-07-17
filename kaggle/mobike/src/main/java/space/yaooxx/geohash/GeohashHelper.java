@@ -20,6 +20,7 @@ public class GeohashHelper {
      */
     public static String convertLnglat2Geohash(double lng, double lat, int level) {
 
+        //经纬二进制隔行扫描后的总长度
         int len = level * 5;
 
         double lngMax = 180;

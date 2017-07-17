@@ -18,7 +18,8 @@ public class TornadoExample {
         Table tornadoes = null;
 
         try {
-            tornadoes = Table.createFromCsv("/root/Documents/dataseed/runtime/tornadoes_1950-2014.csv");
+//            tornadoes = Table.createFromCsv("/root/Documents/dataseed/runtime/tornadoes_1950-2014.csv");
+            tornadoes = Table.createFromCsv("/root/Documents/play/mobike/source/train.csv");
         } catch (IOException e) {
             out.println(e.getMessage());
         }
@@ -35,9 +36,9 @@ public class TornadoExample {
         //显示前N行
         out.println(tornadoes.first(3).print());
         //显示统计信息
-        out.println(tornadoes.column("Fatalities").summary().print());
+        out.println(tornadoes.column("starttime").summary().print());
 
-        tornadoes.selectWhere(column("State").isEqualTo("LA")).exportToCsv("tornadoes_la.csv");
+        tornadoes.selectWhere(column("biketype").isEqualTo(2)).exportToCsv("res/bike2.csv");
 
     }
 

@@ -28,3 +28,22 @@ predict each bike's top 3 possible locations in the testing set
 4. end_location3
 
 
+## misc
+
+#### mysql
+
+ **testing set**
+  
+- fields
+"orderid","userid","bikeid","biketype","starttime","geohashed_start_loc","startLng","startLat"  
+
+
+```
+create database if not exists mobike_tracks default charset utf8 collate utf8_general_ci;
+```
+
+```
+create table mobike_tracks_test(orderid int primary key, userid int , bikeid int, biketype tinyint, starttime datetime, geohashed_start_loc varchar(36), startLng double, startLat double);
+```
+
+TRUNCATE [TABLE] tbl_name  

@@ -28,31 +28,32 @@ public class BikeTracksETL {
         Table bikeTracksTable = null;
 
         try {
-//            bikeTracksTable = Table.createFromCsv("/root/Documents/play/mobike/source/test.csv");
-            bikeTracksTable = Table.createFromCsv("/root/Documents/play/mobike/source/train.csv");
+            bikeTracksTable = Table.createFromCsv("/root/Documents/play/mobike/source/test.csv");
+//            bikeTracksTable = Table.createFromCsv("/root/Documents/play/mobike/source/train.csv");
 //            bikeTracksTable = Table.createFromCsv("/root/Documents/play/mobike/train01.csv");
         } catch (IOException e) {
             out.println(e.getMessage());
         }
 
-        bikeTracksTable.setName("mobike_tracks_train");
+        bikeTracksTable.setName("mobike_tracks_test");
+
 
 //        out.println(bikeTracksTable.structure().print());
 
         //table数据只取8行，用于开发测试
 //        bikeTracksTable = bikeTracksTable.first(8);
 
+        //分析数据新增的字段
         DoubleColumn startLng = DoubleColumn.create("startLng");
         DoubleColumn startLat = DoubleColumn.create("startLat");
         DoubleColumn endLng = DoubleColumn.create("endLng");
         DoubleColumn endLat = DoubleColumn.create("endLat");
 
-        //用来引用所有点构成的FeatureCollection
-        FeatureCollection bikeTracksColletion = new FeatureCollection();
-
-        //用来引用每个点的feature和geometry
-        Feature trackFeature;
-        GeoJsonObject trackGeometry;
+//        //用来引用所有点构成的FeatureCollection
+//        FeatureCollection bikeTracksColletion = new FeatureCollection();
+//        //用来引用每个点的feature和geometry
+//        Feature trackFeature;
+//        GeoJsonObject trackGeometry;
 
         //用来引用geohash还原的经纬度
         double[] lngLat;
@@ -62,10 +63,10 @@ public class BikeTracksETL {
             dLng = Double.valueOf(String.format("%.8f", lngLat[1]));
             dLat = Double.valueOf(String.format("%.8f", lngLat[0]));
 
-            trackFeature = new Feature();
-            trackGeometry = new Point(dLng, dLat);
-            trackFeature.setGeometry(trackGeometry);
-            bikeTracksColletion.add(trackFeature);
+//            trackFeature = new Feature();
+//            trackGeometry = new Point(dLng, dLat);
+//            trackFeature.setGeometry(trackGeometry);
+//            bikeTracksColletion.add(trackFeature);
 
             //将经纬度添加到表格的列
             startLng.add(dLng);
@@ -73,26 +74,37 @@ public class BikeTracksETL {
         }
 
 //        for (String loc : bikeTracksTable.categoryColumn("geohashed_end_loc")) {
-//            ngLat = GeoHashConverter.decode(loc);
-//            endLng.add(Double.valueOf(String.format("%.8f", lngLat[0])));
-//            endLat.add(Double.valueOf(String.format("%.8f", lngLat[1])));
+//            lngLat = GeoHashConverter.decode(loc);
+//            dLng = Double.valueOf(String.format("%.8f", lngLat[1]));
+//            dLat = Double.valueOf(String.format("%.8f", lngLat[0]));
+//            endLng.add(Double.valueOf(dLng));
+//            endLat.add(Double.valueOf(dLat));
 //        }
+
+
+        bikeTracksTable.addColumn(startLng);
+        bikeTracksTable.addColumn(startLat);
+//        bikeTracksTable.addColumn(endLng);
+//        bikeTracksTable.addColumn(endLat);
 
 
         //导出表中指定的列到csv
 //        Table userStartEndTable = Table.create("mobike_user_lnglat", bikeTracksTable.column("userid"), startLng, startLat, endLng, endLat);
 //        userStartEndTable.exportToCsv("res/mobike_user_lnglat.csv");
-//        String trackJson = "";
-        try {
-//             trackJson = new ObjectMapper().writeValueAsString(bikeTracksCollection);
-//            String trackJsonFile = "kaggle/mobike/src/main/resources/public/dataseeds/" + "mobike_testing.json";
-            String trackJsonFile = "kaggle/mobike/src/main/resources/public/dataseeds/" + "mobike_training.json";
+        bikeTracksTable.exportToCsv("res/mobike_tracks_test.csv");
+
+
+////        String trackJson = "";
+//        try {
+////             trackJson = new ObjectMapper().writeValueAsString(bikeTracksCollection);
+////            String trackJsonFile = "kaggle/mobike/src/main/resources/public/dataseeds/" + "mobike_testing.json";
+//            String trackJsonFile = "kaggle/mobike/src/main/resources/public/dataseeds/" + "mobike_training.json";
 //            new ObjectMapper().writer(new DefaultPrettyPrinter()).writeValue(new File(trackJsonFile), bikeTracksColletion);
-            new ObjectMapper().writeValue(new File(trackJsonFile), bikeTracksColletion);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-//        out.println(trackJson);
+//            new ObjectMapper().writeValue(new File(trackJsonFile), bikeTracksColletion);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+////        out.println(trackJson);
 
 
     }

@@ -42,7 +42,7 @@ public class GeoHashConverter {
      * Decode the given geohash into a latitude and longitude.
      *
      * @param geohash the geohash
-     * @return the double[]
+     * @return the double[] latitude, longitude, latitudeError, longitudeError
      */
     public static double[] decode(final String geohash) {
         if ((geohash == null) || geohash.isEmpty()) {
@@ -94,7 +94,7 @@ public class GeoHashConverter {
      * Decodes the given geohash into a latitude and longitude.
      *
      * @param geohash the geohash
-     * @return the double[]
+     * @return the double[] latitude, longitude
      */
     public static double[] decodeAndRound(final String geohash) {
         final double[] ge = decode(geohash);

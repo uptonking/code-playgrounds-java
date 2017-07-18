@@ -1,13 +1,13 @@
 'use strict';
 
-importScripts('./supercluster.js');
+importScripts('../supercluster.js');
 
 var now = Date.now();
 
 var index;
 
 //示例的geojson是feature collection的形式，无length属性
-getJSON('./dataseeds/mobike_test.json', function (geojson) {
+getJSON('../dataseeds/mobike_training.json', function (geojson) {
 //getJSON('http://localhost:8889/dataseeds/mobike_loc.json', function (geojson) {
 
     //console.log(geojson.features)
@@ -36,7 +36,7 @@ function getJSON(url, callback) {
     xhr.onload = function () {
         console.log("onload");
         if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300 && xhr.response) {
-        console.log("before callback");
+            console.log("before callback");
             callback(xhr.response);
         }
     };

@@ -1,6 +1,6 @@
 package yao.basic.nonlinear.graph.Graph.SPFA;
 
-import Graph.basic.GraphList;
+import yao.basic.nonlinear.graph.Graph.basic.GraphList;
 import org.junit.Before;
 import org.junit.Test;
 

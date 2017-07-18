@@ -1,13 +1,25 @@
+
+*.json
+
 *.class
 *.pom
 *.iml
-*.classpath
-.project
+*.pyc
+
 .git
 .idea
 
+.settings
+*.classpath
+.project
 
 target
 node_modules
+
 res
 
+SparkGuide/minimal/project/project/
+SparkGuide/minimal/src/main/scala/space/yaooxx/start/
+java8/src/main/resources/
+java8/src/test/java/yao/basic/linear/queue/
+ria2/examples/

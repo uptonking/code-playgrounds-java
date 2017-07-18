@@ -6,8 +6,8 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 
 # 读取训练集和测试集
-train = pd.read_csv('/root/Documents/play/_src/python_ml_kaggle/datasets/BreastCancer/breast-cancer-train.csv')
-test = pd.read_csv('/root/Documents/play/_src/python_ml_kaggle/datasets/BreastCancer/breast-cancer-test.csv')
+train = pd.read_csv('/root/Documents/play/_src/python_ml_kaggle/datasets/BreastCancer/breast-cancer-test.csv')
+test = pd.read_csv('/root/Documents/play/_src/python_ml_kaggle/datasets/BreastCancer/breast-cancer-train.csv')
 
 # 分离特征与分类标记
 X_train = np.float32(train[['Clump Thickness', 'Cell Size']].T)

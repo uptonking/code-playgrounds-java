@@ -23,7 +23,7 @@ public class BinaryTreeTest {
     }
 
     /**
-     * Method: createBinaryTreeFromArray(T[] array, int start, int end)
+     * Method: createBinaryTreeFromArray(T[] array, int demo, int end)
      */
     @Test
     public void testCreateBinaryTreeFromArray() throws Exception {

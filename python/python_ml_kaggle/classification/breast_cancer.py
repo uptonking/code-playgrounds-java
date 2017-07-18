@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 
 # 读取训练集和测试集
-df_train = pd.read_csv('/root/Documents/play/_src/python_ml_kaggle/datasets/BreastCancer/breast-cancer-train.csv')
-df_test = pd.read_csv('/root/Documents/play/_src/python_ml_kaggle/datasets/BreastCancer/breast-cancer-test.csv')
+df_train = pd.read_csv('/root/Documents/play/_src/python_ml_kaggle/datasets/BreastCancer/breast-cancer-test.csv')
+df_test = pd.read_csv('/root/Documents/play/_src/python_ml_kaggle/datasets/BreastCancer/breast-cancer-train.csv')
 
 # 构建测试集分类标签样本
 df_test_negative = df_test.loc[df_test['Type'] == 0][['Clump Thickness', 'Cell Size']]

@@ -1,6 +1,6 @@
 package yao.basic.nonlinear.graph.Graph.Kruskal;
 
-import Graph.basic.Edge;
+import yao.basic.nonlinear.graph.Graph.basic.Edge;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

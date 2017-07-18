@@ -1,6 +1,6 @@
 package yao.basic.nonlinear.graph.Graph.Floyd;
 
-import Graph.basic.Graph;
+import yao.basic.nonlinear.graph.Graph.basic.Graph;
 import org.junit.Before;
 import org.junit.Test;
 

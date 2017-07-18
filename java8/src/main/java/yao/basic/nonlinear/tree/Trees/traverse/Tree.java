@@ -1,5 +1,5 @@
 package yao.basic.nonlinear.tree.Trees.traverse;
-import Trees.basic.Node;
+import yao.basic.nonlinear.tree.Trees.basic.Node;
 
 import java.util.LinkedList;
 import java.util.Queue;

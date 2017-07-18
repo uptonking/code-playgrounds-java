@@ -1,8 +1,10 @@
-package space.yaooxx.start;
+package space.yaooxx.demo;
 
 import com.github.lwhite1.tablesaw.api.Table;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.github.lwhite1.tablesaw.api.QueryHelper.column;
 import static java.lang.System.out;
@@ -19,7 +21,7 @@ public class TornadoExample {
 
         try {
 //            tornadoes = Table.createFromCsv("/root/Documents/dataseed/runtime/tornadoes_1950-2014.csv");
-            tornadoes = Table.createFromCsv("/root/Documents/play/mobike/source/train.csv");
+            tornadoes = Table.createFromCsv("/root/Documents/play/mobike/source/test.csv");
         } catch (IOException e) {
             out.println(e.getMessage());
         }
@@ -37,6 +39,13 @@ public class TornadoExample {
         out.println(tornadoes.first(3).print());
         //显示统计信息
         out.println(tornadoes.column("starttime").summary().print());
+
+        List<Integer> startloc = new ArrayList<>();
+//        for (String loc : tornadoes.column("geohashed_start_loc")) {
+        for (Integer loc : tornadoes.intColumn("userid")) {
+            System.out.println(loc.toString());
+        }
+
 
         tornadoes.selectWhere(column("biketype").isEqualTo(2)).exportToCsv("res/bike2.csv");
 

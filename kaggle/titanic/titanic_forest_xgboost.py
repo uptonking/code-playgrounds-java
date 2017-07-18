@@ -9,8 +9,8 @@ from sklearn.grid_search import GridSearchCV
 
 from xgboost import XGBClassifier
 
-source_train = pd.read_csv('/root/Documents/play/_kaggle/_titanic/train.csv')
-source_test = pd.read_csv('/root/Documents/play/_kaggle/_titanic/test.csv')
+source_train = pd.read_csv('/root/Documents/play/_kaggle/_titanic/test.csv')
+source_test = pd.read_csv('/root/Documents/play/_kaggle/_titanic/train.csv')
 print '训练集数据：', source_train.shape
 print '测试集数据：', source_test.shape
 

@@ -1,6 +1,6 @@
 package yao.basic.nonlinear.tree.Trees.Huffman;
 
-import Trees.basic.HuffmanNode;
+import yao.basic.nonlinear.tree.Trees.basic.HuffmanNode;
 
 import java.util.Comparator;
 import java.util.HashMap;

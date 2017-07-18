@@ -1,5 +1,6 @@
 package yao.basic.nonlinear.graph.Graph.Floyd;
-import Graph.basic.Graph;
+
+import yao.basic.nonlinear.graph.Graph.basic.Graph;
 
 /**
  * @author chenxi

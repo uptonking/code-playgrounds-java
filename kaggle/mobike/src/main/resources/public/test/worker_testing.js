@@ -1,13 +1,13 @@
 'use strict';
 
-importScripts('./supercluster.js');
+importScripts('../supercluster.js');
 
 var now = Date.now();
 
 var index;
 
 //示例的geojson是feature collection的形式，无length属性
-getJSON('./dataseeds/mobike_test.json', function (geojson) {
+getJSON('../dataseeds/mobike_testing.json', function (geojson) {
 //getJSON('http://localhost:8889/dataseeds/mobike_loc.json', function (geojson) {
 
     //console.log(geojson.features)

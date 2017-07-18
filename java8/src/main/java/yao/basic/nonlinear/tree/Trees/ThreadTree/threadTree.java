@@ -1,6 +1,6 @@
 package yao.basic.nonlinear.tree.Trees.ThreadTree;
 
-import Trees.basic.ThreadNode;
+import yao.basic.nonlinear.tree.Trees.basic.ThreadNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

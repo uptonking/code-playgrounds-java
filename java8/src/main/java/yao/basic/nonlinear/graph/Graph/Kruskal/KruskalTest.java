@@ -1,6 +1,6 @@
 package yao.basic.nonlinear.graph.Graph.Kruskal;
 
-import Graph.basic.Edge;
+import yao.basic.nonlinear.graph.Graph.basic.Edge;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,9 +39,9 @@ public class KruskalTest {
 	public boolean Validate(kGraph g)
 	{
 		
-		for(Iterator< Edge>i = g.edges.iterator();i.hasNext();)
+		for(Iterator i = g.edges.iterator(); i.hasNext();)
 		{
-			Edge edge = i.next();
+			Edge edge = (Edge)i.next();
 			if( !validEdge(edge, 4, 7, 7)&&
 				!validEdge(edge,2,8,8) &&
 				!validEdge(edge, 0, 1, 10) &&

@@ -14,7 +14,7 @@ var markers = L.geoJson(null, {
 }).addTo(map);
 
 //初始化worker，读取数据
-var worker = new Worker('worker.js');
+var worker = new Worker('worker_training.js');
 var ready = false;
 
 //主线程接收worker的回传消息

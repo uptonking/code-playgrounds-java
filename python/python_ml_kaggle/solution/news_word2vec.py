@@ -37,14 +37,14 @@ num_workers = 2     # Number of threads to run in parallel
 context = 5        # Context window size
 downsampling = 1e-3   # Downsample setting for frequent words
 
-# Initialize and train the model (this will take some time)
+# Initialize and test the model (this will take some time)
 from gensim.models import word2vec
 
 model = word2vec.Word2Vec(sentences, workers=num_workers, \
                           size=num_features, min_count = min_word_count, \
                           window = context, sample = downsampling)
 
-# If you don't plan to train the model any further, calling
+# If you don't plan to test the model any further, calling
 # init_sims will make the model much more memory-efficient.
 model.init_sims(replace=True)
 

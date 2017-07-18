@@ -1,7 +1,7 @@
 package yao.basic.nonlinear.graph.Graph.Topological;
 
-import Graph.basic.GraphList;
-import Graph.basic.GraphPoint;
+import yao.basic.nonlinear.graph.Graph.basic.GraphList;
+import yao.basic.nonlinear.graph.Graph.basic.GraphPoint;
 
 import java.util.ArrayList;
 import java.util.Iterator;

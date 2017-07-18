@@ -1,7 +1,7 @@
 package yao.basic.nonlinear.graph.Graph.Kruskal;
 
-import Graph.basic.Edge;
-import Graph.basic.Graph;
+import yao.basic.nonlinear.graph.Graph.basic.Edge;
+import yao.basic.nonlinear.graph.Graph.basic.Graph;
 
 import java.util.ArrayList;
 import java.util.Iterator;

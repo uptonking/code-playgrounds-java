@@ -1,7 +1,7 @@
 package yao.basic.nonlinear.graph.Graph.SPFA;
 
-import Graph.basic.EdgePoint;
-import Graph.basic.GraphList;
+import yao.basic.nonlinear.graph.Graph.basic.EdgePoint;
+import yao.basic.nonlinear.graph.Graph.basic.GraphList;
 
 import java.util.LinkedList;
 import java.util.Queue;

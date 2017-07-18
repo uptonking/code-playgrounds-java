@@ -1,8 +1,8 @@
 package yao.basic.nonlinear.graph.Graph.Topological;
 
-import Graph.basic.EdgePoint;
-import Graph.basic.GraphList;
-import Graph.basic.GraphPoint;
+import yao.basic.nonlinear.graph.Graph.basic.EdgePoint;
+import yao.basic.nonlinear.graph.Graph.basic.GraphList;
+import yao.basic.nonlinear.graph.Graph.basic.GraphPoint;
 
 import java.util.Iterator;
 import java.util.Stack;
@@ -161,7 +161,7 @@ public class KeyPath {
 		KeyPath kp = new KeyPath();
 		GraphList gl = kp.init();
 		kp.initVariables(gl.count);
-		//kp.test(gl);
+		//kp.train(gl);
 		kp.getKeyPath(gl);
 		
 	}

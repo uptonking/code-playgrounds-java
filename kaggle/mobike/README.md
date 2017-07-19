@@ -46,4 +46,9 @@ create database if not exists mobike_tracks default charset utf8 collate utf8_ge
 create table mobike_tracks_test(orderid int primary key, userid int , bikeid int, biketype tinyint, starttime datetime, geohashed_start_loc varchar(36), startLng double, startLat double);
 ```
 
-TRUNCATE [TABLE] tbl_name  
+
+**training set**
+``` 
+create table mobike_tracks_train( orderid int primary key, userid int, bikeid int, biketype int, starttime datetime, geohashed_start_loc varchar(48), geohashed_end_loc varchar(48), startLng double, startLat double, endLng double, endLat double, distance double);
+
+```

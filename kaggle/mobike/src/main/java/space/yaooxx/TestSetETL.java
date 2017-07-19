@@ -15,7 +15,7 @@ import space.yaooxx.geohash.GeoHashConverter;
 
 import static java.lang.System.out;
 
-public class MySQLETL {
+public class TestSetETL {
 
     private static Table bikeTracksTable = null;
     static List columns = null;
@@ -29,6 +29,7 @@ public class MySQLETL {
             out.println(e.getMessage());
         }
 
+//        bikeTracksTable = bikeTracksTable.first(8);
 
         //分析数据新增的字段
         DoubleColumn startLng = DoubleColumn.create("startLng");

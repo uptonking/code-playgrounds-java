@@ -14,7 +14,7 @@ public class QuickSort {
 
     public static void sortArray(int[] a, int start, int end) {
 
-        if (end < start) return ;
+        if (end < start) return;
 
         // 选定的基准值，这里选第一个元素
         int base = a[start];

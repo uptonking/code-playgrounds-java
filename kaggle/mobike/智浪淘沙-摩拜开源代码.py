@@ -191,7 +191,7 @@ train = train[train.starttime.map(lambda x:x[:10]).isin(train1)]
 
 train2 = shijian_chuli(train2)
 train = shijian_chuli(train)
-#test = shijian_chuli(test)
+#test = datateime_slice(test)
 
 pj1 = train[['geohashed_start_loc','geohashed_end_loc','hour_sx','week_sx']]
 pj1 = pj1.rename(columns = {'geohashed_end_loc':'tj_dd'})
@@ -289,7 +289,7 @@ bst = xgb.train(params, x, num_round, watchlist, evals_result=evals_result,early
 ##print(z2.shape)
 ##del z2['starttime']
 ##zh = z2.loc[:,('geohashed_start_loc','tj_dd')]
-##js = jsjl(zh)
+##js = cal_distance_start_end(zh)
 ##
 ##z2 = pd.merge(z2,js[['geohashed_start_loc','tj_dd','juli']],on = ['geohashed_start_loc','tj_dd'],how = 'left')
 #

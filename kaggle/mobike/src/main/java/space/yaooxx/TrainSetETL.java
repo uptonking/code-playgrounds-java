@@ -65,6 +65,7 @@ public class TrainSetETL {
         int colCount = bikeTracksTable.columnCount();
         columns = bikeTracksTable.columns();
 
+
         final String url = "jdbc:mysql://127.0.0.1/mobike_tracks";
         final String name = "com.mysql.jdbc.Driver";
         final String user = "root";

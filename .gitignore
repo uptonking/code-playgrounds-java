@@ -3,16 +3,14 @@
 
 *.class
 *.pom
-*.iml
 *.pyc
 
 .git
 .idea
-
+*.iml
 .settings
 *.classpath
 .project
-
 target
 node_modules
 

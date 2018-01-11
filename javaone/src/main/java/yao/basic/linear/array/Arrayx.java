@@ -1,18 +1,22 @@
 package yao.basic.linear.array;
 
 /**
- * Java自定义数组
+ * Java不需要自定义数组
+ * 基本类型数组直接使用
+ * 引用类型数组要注意初始化
+ * <p>
+ * 自定义数组类可加入过滤、排序、连接等常用工具类的功能
  */
-public class Array {
+public class Arrayx {
 
-    //数组对象
+    //数组对象，元素为整型
     private int[] arr;
     //数组最大长度
     private int arrSize;
     //数组非空数据长度
     public int length;
 
-    public Array(int size) {
+    public Arrayx(int size) {
         if (size <= 0) {
             System.out.println("invalid array size");
             return;
@@ -40,10 +44,10 @@ public class Array {
     }
 
 
-    public void traverse(){
+    public void traverse() {
 
-        for(int i=0;i<length;i++){
-            System.out.println(arr[i]+"  ");
+        for (int i = 0; i < length; i++) {
+            System.out.println(arr[i] + "  ");
         }
     }
 
@@ -132,7 +136,7 @@ public class Array {
      * @param a
      * @param b
      */
-    public void union(Array a, Array b) {
+    public void union(Arrayx a, Arrayx b) {
         int al = a.length;
         int bl = b.length;
 
@@ -152,7 +156,7 @@ public class Array {
      * @param a
      * @param b
      */
-    public void intersection(Array a, Array b) {
+    public void intersection(Arrayx a, Arrayx b) {
         int al = a.length;
         int bl = b.length;
 
@@ -169,9 +173,9 @@ public class Array {
         }
     }
 
-    public void clear(){
-        arr=null;
-        length=0;
+    public void clear() {
+        arr = null;
+        length = 0;
     }
 
 
@@ -188,7 +192,7 @@ public class Array {
             result.append("[]");
         } else {
             result.append("[");
-            for (int i = 0; i < length ; i++) {
+            for (int i = 0; i < length; i++) {
                 if (i == length - 1) {
                     result.append(arr[i]).append("]");
                 } else {

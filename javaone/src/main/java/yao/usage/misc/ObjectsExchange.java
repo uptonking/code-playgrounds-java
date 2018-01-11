@@ -1,4 +1,4 @@
-package yao.basic;
+package yao.usage.misc;
 
 /**
  * 交换两个数

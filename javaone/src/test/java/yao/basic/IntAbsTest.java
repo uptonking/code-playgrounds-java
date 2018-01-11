@@ -6,7 +6,7 @@ import org.junit.After;
 
 import static org.junit.Assert.assertEquals;
 
-import static yao.basic.IntAbs.*;
+import static yao.usage.misc.IntAbs.*;
 
 /**
  * IntAbs Tester.
@@ -48,4 +48,4 @@ public class IntAbsTest {
     }
 
 
-} 
+}

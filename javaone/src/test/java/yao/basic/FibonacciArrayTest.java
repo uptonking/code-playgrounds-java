@@ -7,8 +7,8 @@ import org.junit.After;
 import java.text.DecimalFormat;
 
 import static org.junit.Assert.assertEquals;
-import static yao.basic.FibonacciArray.calcFibonacciNonRecursive;
-import static yao.basic.FibonacciArray.calcFibonacciRecursive;
+import static yao.offer.FibonacciArray.calcFibonacciNonRecursive;
+import static yao.offer.FibonacciArray.calcFibonacciRecursive;
 
 /**
  * FibonacciArray Tester.
@@ -76,4 +76,4 @@ public class FibonacciArrayTest {
     }
 
 
-} 
+}

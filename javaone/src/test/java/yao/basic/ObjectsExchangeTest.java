@@ -3,6 +3,7 @@ package yao.basic;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
+import yao.usage.misc.ObjectsExchange;
 
 
 /**
@@ -34,4 +35,4 @@ public class ObjectsExchangeTest {
     }
 
 
-} 
+}

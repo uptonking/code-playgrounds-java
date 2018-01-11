@@ -7,20 +7,20 @@ import org.junit.After;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Array Tester.
+ * Arrayx Tester.
  *
  * @author <Authors name>
  * @version 1.0
  * @since <pre>Jun 23, 2017</pre>
  */
-public class ArrayTest {
+public class ArrayxTest {
 
-    Array a1;
+    Arrayx a1;
 
     @Before
     public void before() throws Exception {
 
-        a1 = new Array(100);
+        a1 = new Arrayx(100);
 
     }
 
@@ -33,7 +33,7 @@ public class ArrayTest {
      */
     @Test
     public void testGet() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -41,7 +41,7 @@ public class ArrayTest {
      */
     @Test
     public void testSearch() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -61,23 +61,23 @@ public class ArrayTest {
      */
     @Test
     public void testRemove() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
-     * Method: union(Array a, Array b)
+     * Method: union(Arrayx a, Arrayx b)
      */
     @Test
     public void testUnion() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
-     * Method: intersection(Array a, Array b)
+     * Method: intersection(Arrayx a, Arrayx b)
      */
     @Test
     public void testIntersection() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
 
@@ -86,17 +86,17 @@ public class ArrayTest {
      */
     @Test
     public void testGetArray() throws Exception {
-//TODO: Test goes here... 
-/* 
-try { 
-   Method method = Array.getClass().getMethod("getArray"); 
-   method.setAccessible(true); 
-   method.invoke(<Object>, <Parameters>); 
-} catch(NoSuchMethodException e) { 
-} catch(IllegalAccessException e) { 
-} catch(InvocationTargetException e) { 
-} 
+//TODO: Test goes here...
+/*
+try {
+   Method method = Arrayx.getClass().getMethod("getArray");
+   method.setAccessible(true);
+   method.invoke(<Object>, <Parameters>);
+} catch(NoSuchMethodException e) {
+} catch(IllegalAccessException e) {
+} catch(InvocationTargetException e) {
+}
 */
     }
 
-} 
+}

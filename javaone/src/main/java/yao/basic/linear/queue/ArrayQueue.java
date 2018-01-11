@@ -1,7 +1,5 @@
 package yao.basic.linear.queue;
 
-import yao.basic.linear.array.Array;
-
 import java.util.Arrays;
 
 /**

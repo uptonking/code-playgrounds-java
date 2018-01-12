@@ -3,6 +3,7 @@ package yao.basic.search.ext;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
+import yao.algs.search.ext.FibonacciSearch2;
 
 /**
  * FibonacciSearch2 Tester.
@@ -36,7 +37,7 @@ public class FibonacciSearchTest {
      */
     @Test
     public void testMain() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
 
@@ -45,16 +46,16 @@ public class FibonacciSearchTest {
      */
     @Test
     public void testCreateFibonacci() throws Exception {
-//TODO: Test goes here... 
-/* 
-try { 
-   Method method = FibonacciSearch2.getClass().getMethod("createFibonacci", int.class); 
-   method.setAccessible(true); 
-   method.invoke(<Object>, <Parameters>); 
-} catch(NoSuchMethodException e) { 
-} catch(IllegalAccessException e) { 
-} catch(InvocationTargetException e) { 
-} 
+//TODO: Test goes here...
+/*
+try {
+   Method method = FibonacciSearch2.getClass().getMethod("createFibonacci", int.class);
+   method.setAccessible(true);
+   method.invoke(<Object>, <Parameters>);
+} catch(NoSuchMethodException e) {
+} catch(IllegalAccessException e) {
+} catch(InvocationTargetException e) {
+}
 */
     }
 
@@ -63,17 +64,17 @@ try {
      */
     @Test
     public void testFindX() throws Exception {
-//TODO: Test goes here... 
-/* 
-try { 
-   Method method = FibonacciSearch2.getClass().getMethod("findX", int[].class, int.class, int.class); 
-   method.setAccessible(true); 
-   method.invoke(<Object>, <Parameters>); 
-} catch(NoSuchMethodException e) { 
-} catch(IllegalAccessException e) { 
-} catch(InvocationTargetException e) { 
-} 
+//TODO: Test goes here...
+/*
+try {
+   Method method = FibonacciSearch2.getClass().getMethod("findX", int[].class, int.class, int.class);
+   method.setAccessible(true);
+   method.invoke(<Object>, <Parameters>);
+} catch(NoSuchMethodException e) {
+} catch(IllegalAccessException e) {
+} catch(InvocationTargetException e) {
+}
 */
     }
 
-} 
+}

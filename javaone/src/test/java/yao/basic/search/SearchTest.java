@@ -3,6 +3,7 @@ package yao.basic.search;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
+import yao.algs.search.FibonacciSearch;
 
 /**
  * BinarySearch Tester.
@@ -57,4 +58,4 @@ public class SearchTest {
     }
 
 
-} 
+}

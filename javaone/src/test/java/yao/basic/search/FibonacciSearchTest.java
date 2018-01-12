@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 
-import static yao.basic.search.FibonacciSearch.*;
+import static yao.algs.search.FibonacciSearch.*;
 
 /**
  * FibonacciSearch3 Tester.
@@ -28,7 +28,7 @@ public class FibonacciSearchTest {
      */
     @Test
     public void testCreateFibonacci() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -46,4 +46,4 @@ public class FibonacciSearchTest {
     }
 
 
-} 
+}

@@ -38,6 +38,24 @@ public class ResizableArray<E> extends AbstractCollection<E> {
         }
     }
 
+
+    public E get(int index) {
+        checkRange(index);
+        return elementData(index);
+    }
+
+    public E set(int index, E ele) {
+        checkRange(index);
+        E oldValue = elementData(index);
+        elementData[index] = ele;
+        return oldValue;
+    }
+
+    @SuppressWarnings("unchecked")
+    private E elementData(int index) {
+        return (E) elementData[index];
+    }
+
     /**
      * 加入元素到末尾
      *
@@ -73,7 +91,7 @@ public class ResizableArray<E> extends AbstractCollection<E> {
     /**
      * 删除指定位置的元素
      *
-     * @param index 位置
+     * @param index 位置，从0开始
      * @return 删除的元素
      */
     @SuppressWarnings("unchecked")
@@ -81,8 +99,8 @@ public class ResizableArray<E> extends AbstractCollection<E> {
         checkRange(index);
 
         E ele = (E) elementData[index];
-        System.arraycopy(elementData, index, elementData, index - 1, size - index);
-        size--;
+        System.arraycopy(elementData, index + 1, elementData, index, size - index - 1);
+        elementData[--size] = null;
         return ele;
     }
 
@@ -193,7 +211,7 @@ public class ResizableArray<E> extends AbstractCollection<E> {
     }
 
     private void checkRange(int index) {
-        if (index >= size || index < 0)
+        if (index < 0 || index >= size)
             throw new RuntimeException(index + " 插入的位置越界或不合法");
     }
 

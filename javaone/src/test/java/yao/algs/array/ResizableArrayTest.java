@@ -16,12 +16,12 @@ import java.util.Arrays;
  */
 public class ResizableArrayTest {
 
-    private ResizableArray<String> tech;
+        private ResizableArray<String> tech = new ResizableArray<>();
 //    private ArrayList<String> tech = new ArrayList<>();
 
     @Before
     public void before() throws Exception {
-        tech = new ResizableArray<>();
+
     }
 
     @After
@@ -40,7 +40,8 @@ public class ResizableArrayTest {
         tech.add("spark");
 
         tech.remove("webmagic");
-        tech.remove(1);
+        tech.remove(2);
+        tech.set(0,"kylin");
 
         System.out.println(Arrays.toString(tech.toArray(new String[tech.size()])));
 

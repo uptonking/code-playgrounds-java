@@ -22,10 +22,56 @@ public class TwoWayList<E> extends AbstractCollection<E> {
     }
 
     public TwoWayList(E e) {
-        Node<E> node = new Node<>(e);
-        this.head = node;
-        this.tail = node;
+        Node<E> newNode = new Node<>(e);
+        this.head = newNode;
+        this.tail = newNode;
         size++;
+    }
+
+    /**
+     * 获取指定位置的元素
+     *
+     * @param index 位置，从0开始
+     * @return 元素
+     */
+    public E get(int index) {
+        checkRange(index);
+
+        Node<E> curNode = head;
+        for (int i = 0; i < index; i++) {
+            curNode = curNode.next;
+        }
+        return curNode.data;
+    }
+
+    public E set(int index, E ele) {
+        checkRange(index);
+
+        Node<E> newNode = new Node<>(ele);
+        Node<E> curNode = head;
+
+        if (index == 0) {
+            newNode.next = head.next;
+            newNode.prev = null;
+            head = newNode;
+            return curNode.data;
+        }
+
+        if (index == size - 1) {
+            curNode = tail;
+            tail.prev.next = null;
+            tail = tail.prev;
+            return curNode.data;
+        }
+
+        for (int i = 0; i < index; i++) {
+            curNode = curNode.next;
+        }
+        newNode.next = curNode.next;
+        newNode.prev = curNode.prev;
+        curNode.next.prev = newNode;
+        curNode.prev.next = newNode;
+        return curNode.data;
     }
 
     /**
@@ -91,16 +137,21 @@ public class TwoWayList<E> extends AbstractCollection<E> {
     public boolean addLast(E e) {
         Node<E> newNode = new Node<>(e);
         size++;
+
         if (head == null) {
             head = newNode;
+            tail = newNode;
             return true;
         }
-        Node<E> curNode = head;
-        while (curNode.next != null) {
-            curNode = curNode.next;
-        }
-        curNode.next = newNode;
-        newNode.prev = curNode;
+//        Node<E> curNode = head;
+//        while (curNode.next != null) {
+//            curNode = curNode.next;
+//        }
+//        curNode.next = newNode;
+//        newNode.prev = curNode;
+        tail.next = newNode;
+        newNode.prev = tail;
+        tail = newNode;
         return true;
     }
 
@@ -207,8 +258,9 @@ public class TwoWayList<E> extends AbstractCollection<E> {
         }
 
         Node<E> newNode = head;
-        if (head.next == null) {
+        if (head == tail) {
             head = null;
+            tail = null;
             size--;
             return newNode.data;
         }
@@ -218,18 +270,16 @@ public class TwoWayList<E> extends AbstractCollection<E> {
 
         ///只有2个节点的场景
         if (q.next == null) {
-            head.next = null;
+            tail = q.prev;
         }
 
         while (q.next != null) {
-//            q = q.next;
-//            p.next = q;
             p = p.next;
             q = q.next;
         }
-        p.next = null;
+        tail = q.prev;
+        tail.next = null;
         newNode = q;
-//        q = null;
         size--;
         return newNode.data;
     }
@@ -293,7 +343,7 @@ public class TwoWayList<E> extends AbstractCollection<E> {
     }
 
     private void checkRange(int index) {
-        if (index > size - 1 || index < 0)
+        if (index < 0 || index >= size)
             throw new RuntimeException(index + " 插入的位置越界或不合法");
     }
 

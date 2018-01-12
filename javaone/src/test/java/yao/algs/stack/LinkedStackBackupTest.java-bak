@@ -1,0 +1,69 @@
+package yao.algs.stack;
+
+import org.junit.Test;
+import org.junit.Before;
+import org.junit.After;
+
+import java.util.Arrays;
+
+/**
+ * LinkedStackBackup Tester.
+ *
+ * @author <Authors name>
+ * @version 1.0
+ * @since <pre>Jan 12, 2018</pre>
+ */
+public class LinkedStackBackupTest {
+    private LinkedStackBackup<String> algs = new LinkedStackBackup<>();
+
+    @Before
+    public void before() throws Exception {
+    }
+
+    @After
+    public void after() throws Exception {
+    }
+
+    /**
+     * Method: push(E e)
+     */
+    @Test
+    public void testPush() throws Exception {
+        algs.push("aaa");
+        algs.push("bbb");
+        algs.push("ccc");
+        algs.push("ddd");
+        algs.pop();
+//        algs.pop();
+//        algs.pop();
+        algs.pop();
+        algs.pop();
+        System.out.println(Arrays.toString(algs.toArray(new String[algs.size()])));
+    }
+
+    /**
+     * Method: pop()
+     */
+    @Test
+    public void testPop() throws Exception {
+//TODO: Test goes here...
+    }
+
+    /**
+     * Method: peek()
+     */
+    @Test
+    public void testPeek() throws Exception {
+//TODO: Test goes here...
+    }
+
+    /**
+     * Method: search(Object o)
+     */
+    @Test
+    public void testSearch() throws Exception {
+//TODO: Test goes here...
+    }
+
+
+}

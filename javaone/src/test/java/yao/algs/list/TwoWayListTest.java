@@ -14,11 +14,11 @@ import java.util.Arrays;
  * @since <pre>Jan 11, 2018</pre>
  */
 public class TwoWayListTest {
-    private TwoWayList<String> algs;
+    private TwoWayList<String> algs=new TwoWayList<>();
 
     @Before
     public void before() throws Exception {
-        algs = new TwoWayList<>("array");
+//        algs = new TwoWayList<>("array");
 
     }
 
@@ -31,15 +31,17 @@ public class TwoWayListTest {
      */
     @Test
     public void testAddE() throws Exception {
-        algs.add("list");
-        algs.add("stack");
-        algs.add("queue");
-        algs.add("tree");
-        algs.add("graph");
+        algs.add("aaa");
+        algs.add("bbb");
+        algs.add("ccc");
+        algs.add("ddd");
+        algs.add("eee");
 
-        algs.remove("graph");
+        algs.remove("ddd");
         algs.remove(0);
+        algs.remove(2);
         algs.removeLast();
+        algs.set(0, "first");
 
         System.out.println(Arrays.toString(algs.toArray(new String[algs.size()])));
     }

@@ -79,9 +79,11 @@ public class ResizableArray<E> extends AbstractCollection<E> {
      */
     public boolean add(int index, E e) {
         ensureElementNotNull(e);
-        checkRange(index);
 
         ensureCapacity(size + 1);
+
+        checkRange(index);
+
         System.arraycopy(elementData, index + 1, elementData, index, size - index - 1);
         elementData[index] = e;
         size++;

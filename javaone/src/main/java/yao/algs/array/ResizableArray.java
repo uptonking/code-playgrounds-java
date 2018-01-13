@@ -171,6 +171,11 @@ public class ResizableArray<E> extends AbstractCollection<E> {
         return elementData;
     }
 
+    @Override
+    public String toString() {
+        return Arrays.toString(toArray(new Object[size]));
+    }
+
     /**
      * 数组动态扩容方法，每次增加现有长度的一半
      */

@@ -13,6 +13,7 @@ package yao.algs.unionfind;
  * <p>
  * Created by yaoo on 1/14/18
  */
+@SuppressWarnings("unused")
 public class ArrayDisjointSet implements DisjointSet {
 
     //存储

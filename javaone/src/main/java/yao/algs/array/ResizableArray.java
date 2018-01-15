@@ -219,7 +219,7 @@ public class ResizableArray<E> extends AbstractCollection<E> {
 
     private void checkRange(int index) {
         if (index < 0 || index >= size)
-            throw new RuntimeException(index + " 插入的位置越界或不合法");
+            throw new IllegalArgumentException(index + " 插入的位置越界或不合法");
     }
 
 }

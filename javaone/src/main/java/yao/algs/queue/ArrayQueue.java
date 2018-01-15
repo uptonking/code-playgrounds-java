@@ -6,6 +6,7 @@ import yao.algs.array.ResizableArray;
  * 动态数组实现的队列
  * Created by yaoo on 1/12/18
  */
+@SuppressWarnings("unused")
 public class ArrayQueue<E> extends ResizableArray<E> implements Queue<E> {
 
     public ArrayQueue() {

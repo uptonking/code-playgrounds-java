@@ -6,6 +6,7 @@ import yao.algs.list.TwoWayList;
  * 双向链表实现的队列
  * Created by yaoo on 1/12/18
  */
+@SuppressWarnings("unused")
 public class LinkedQueue<E> extends TwoWayList<E> implements Queue<E> {
 
     public LinkedQueue() {

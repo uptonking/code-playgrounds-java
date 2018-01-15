@@ -5,6 +5,7 @@ package yao.algs.unionfind;
  * 链表实现的并查集
  * Created by yaoo on 1/14/18
  */
+@SuppressWarnings("unused")
 public class LinkedDisjointSet implements DisjointSet {
 
     /**

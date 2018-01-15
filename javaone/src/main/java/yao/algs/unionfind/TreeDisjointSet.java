@@ -4,6 +4,7 @@ package yao.algs.unionfind;
  * 树实现的并查集
  * Created by yaoo on 1/14/18
  */
+@SuppressWarnings("unused")
 public class TreeDisjointSet implements DisjointSet {
 
     private static class Node {

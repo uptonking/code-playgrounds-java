@@ -39,10 +39,18 @@ public class OneWayListTest {
         algs.add("tree");
         algs.add("graph");
 
-        algs.remove("graph");
-        algs.remove(0);
+//        algs.remove("graph");
+//        algs.remove(0);
 
         System.out.println(Arrays.toString(algs.toArray(new String[algs.size()])));
+
+        algs.reverseList(algs.getHead());
+        System.out.println(Arrays.toString(algs.toArray(new String[algs.size()])));
+
+        algs.setHead(algs.reverseListRecursive(algs.getHead()));
+        System.out.println(Arrays.toString(algs.toArray(new String[algs.size()])));
+
+
     }
 
     /**

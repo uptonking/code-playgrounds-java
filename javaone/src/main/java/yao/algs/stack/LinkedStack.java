@@ -7,7 +7,7 @@ import yao.algs.list.TwoWayList;
  *
  * @param <E>
  */
-//@SuppressWarnings("unused")
+@SuppressWarnings("unused")
 public class LinkedStack<E> extends TwoWayList<E> {
 
     public LinkedStack() {

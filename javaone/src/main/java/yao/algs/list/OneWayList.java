@@ -13,6 +13,7 @@ public class OneWayList<E> extends AbstractCollection<E> {
 
     private int size;
 
+
     private Node<E> head;
 
     public OneWayList() {
@@ -214,6 +215,47 @@ public class OneWayList<E> extends AbstractCollection<E> {
     }
 
 
+    /**
+     * 反转链表 迭代法
+     */
+    public void reverseList(Node<E> head) {
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        Node<E> p = head;
+        Node<E> q = p.next;
+        Node<E> temp;
+        while (q != null) {
+            temp = q.next;
+            q.next = p;
+            p = q;
+            q = temp;
+        }
+
+        this.head.next = null;
+        this.head = p;
+    }
+
+    /**
+     * 反转链表 递归法 不推荐使用
+     * <p>
+     * 注意：使用此法反转后需要手动设置链表的head为返回值 ！！！
+     */
+    @Deprecated
+    public Node<E> reverseListRecursive(Node<E> head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        Node<E> prev = reverseListRecursive(head.next);
+
+        head.next.next = head;
+        head.next = null;
+
+        return prev;
+    }
+
     @Override
     public void clear() {
         while (head != null) {
@@ -274,6 +316,14 @@ public class OneWayList<E> extends AbstractCollection<E> {
     private void checkRange(int index) {
         if (index > size - 1 || index < 0)
             throw new RuntimeException(index + " 插入的位置越界或不合法");
+    }
+
+    public Node<E> getHead() {
+        return head;
+    }
+
+    public void setHead(Node<E> head) {
+        this.head = head;
     }
 
     private static class Node<E> {

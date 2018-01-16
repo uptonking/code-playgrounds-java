@@ -28,6 +28,17 @@ public class TwoWayList<E> extends AbstractCollection<E> {
         size++;
     }
 
+    public TwoWayList(E[] arr) {
+        if (arr == null || arr.length == 0) throw new IllegalArgumentException("数组不能为空");
+        Node<E> newNode = new Node<>(arr[0]);
+        this.head = newNode;
+        this.tail = newNode;
+        for (int i = 1; i < arr.length; i++) {
+            this.addLast(arr[i]);
+        }
+
+    }
+
     /**
      * 获取指定位置的元素
      *
@@ -135,53 +146,71 @@ public class TwoWayList<E> extends AbstractCollection<E> {
     }
 
     public boolean addLast(E e) {
-        Node<E> newNode = new Node<>(e);
+        Node<E> node = new Node<>(e);
+        return addLast(node);
+    }
+
+    public boolean addLast(Node<E> newNode) {
+        if (newNode == null) throw new IllegalArgumentException("添加的节点不能为空");
+
         size++;
 
         if (head == null) {
             head = newNode;
-            tail = newNode;
+            tail = head;
             return true;
         }
-//        Node<E> curNode = head;
-//        while (curNode.next != null) {
-//            curNode = curNode.next;
-//        }
-//        curNode.next = newNode;
-//        newNode.prev = curNode;
+
         tail.next = newNode;
         newNode.prev = tail;
         tail = newNode;
+
         return true;
     }
 
+    /**
+     * 删除与指定元素相等的第一个元素
+     * <p>
+     * 注意删除后要相应地改变头尾指针
+     *
+     * @param o 指定元素
+     * @return 删除成功/失败
+     */
     @Override
     public boolean remove(Object o) {
         if (head == null) {
             return false;
         }
+
+        size--;
+
         if (head.next == null && head.data.equals(o)) {
             head = null;
             tail = null;
-            size--;
             return true;
         }
 
         Node<E> p = head;
         Node<E> q = head.next;
+        ///单独处理头节点
+        if (p.data.equals(o)) {
+            head = head.next;
+            head.prev = null;
+        }
+
+        ///继续处理剩下节点
         while (q != null) {
             if (q.data.equals(o)) {
                 ///q是尾节点
                 if (q.next == null) {
                     p.next = null;
-//                    q = null;
+                    tail = p;
 
                 } else {
                     ///q不是尾节点
                     p.next = q.next;
                     q.next.prev = p;
                 }
-                size--;
                 return true;
             }
             p = q;
@@ -322,6 +351,31 @@ public class TwoWayList<E> extends AbstractCollection<E> {
     }
 
     @Override
+    public Object clone() {
+        TwoWayList<E> clone = new TwoWayList<>();
+//        try {
+//            clone = (TwoWayList<E>) super.clone();
+//        } catch (CloneNotSupportedException e) {
+//            e.printStackTrace();
+//        }
+
+        clone.head = null;
+        clone.tail = null;
+        clone.size = 0;
+
+        Node<E> curNode = head;
+        while (curNode != null) {
+
+            //不要直接用addLast(Node<E> newNode)，这样还会使用原链表的prev和next！！！
+            clone.addLast(curNode.data);
+
+            curNode = curNode.next;
+
+        }
+        return clone;
+    }
+
+    @Override
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] t) {
         if (head == null) {
@@ -340,13 +394,22 @@ public class TwoWayList<E> extends AbstractCollection<E> {
             curNode = curNode.next;
         }
         return t;
+
     }
 
     private void checkRange(int index) {
         if (index < 0 || index >= size)
-            throw new RuntimeException(index + " 插入的位置越界或不合法");
+            throw new IllegalArgumentException(index + " 插入的位置越界或不合法");
     }
 
+    @Override
+    public String toString() {
+        return "TwoWList{" +
+                "size=" + size +
+                ", head=" + (head == null ? "NULL" : head.data) +
+                ", tail=" + (tail == null ? "NULL" : tail.data) +
+                '}';
+    }
 
     private static class Node<E> {
         Node<E> prev;
@@ -363,6 +426,15 @@ public class TwoWayList<E> extends AbstractCollection<E> {
             this.prev = prev;
             this.next = next;
             this.data = data;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "data=" + (data == null ? "NULL" : data) +
+                    ", next=" + (next == null ? "NULL" : next.data) +
+                    ", prev=" + (prev == null ? "NULL" : prev.data) +
+                    '}';
         }
     }
 

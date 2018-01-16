@@ -3,8 +3,10 @@ package yao.algs.unionfind;
 /**
  * 数组实现的并查集
  * <p>
+ * 并查集是与元素数据实际类型无关的，数组下标代表数据id位置，数组值是该位置元素所属集合的代表的下标值，-1表示本身为代表
+ * <p>
  * 在并查集中需要两个类型的参数：集合名字的类型和元素的类型。
- * 在许多情况下，可以用整数作为集合的名字。 如果集合中共有n个元素，可以用范围【1：n】以内的整数表示元素。
+ * 在许多情况下，可以用整数作为集合的名字。 如果集合中共有n个元素，可以用范围[1, n]以内的整数表示元素。
  * <p>
  * 实现并查集的一个简单方法是使用数组表示元素及其所属子集的关系。 用数组下标表示元素，用数组单元记录该元素所属的子集名字。
  * <p>
@@ -16,7 +18,7 @@ package yao.algs.unionfind;
 @SuppressWarnings("unused")
 public class ArrayDisjointSet implements DisjointSet {
 
-    //存储
+    //存储各元素所属集合的代表的下标
     public int[] s;
 
     //并查集中子集合个数
@@ -84,15 +86,15 @@ public class ArrayDisjointSet implements DisjointSet {
         }
     }
 
-    public void unionBySize(int root1, int root2){
+    public void unionBySize(int root1, int root2) {
 
-        if(find(root1) == find(root2))
+        if (find(root1) == find(root2))
             return;//root1 与 root2已经连通了
 
-        if(s[root2] < s[root1])//root2 is deeper
+        if (s[root2] < s[root1])//root2 is deeper
             s[root1] = root2;
-        else{
-            if(s[root1] == s[root2])//root1 and root2 is the same deeper
+        else {
+            if (s[root1] == s[root2])//root1 and root2 is the same deeper
                 s[root1]--;//将root1的高度加1
             s[root2] = root1;//将root2的根(指向)更新为root1
         }

@@ -123,7 +123,6 @@ public class MinBinaryHeap<E extends Comparable<? super E>> implements Heap<E> {
     }
 
 
-
     private int getParent(int i) {
 //        return (i-1)>>>2;
         return (i - 1) / 2;

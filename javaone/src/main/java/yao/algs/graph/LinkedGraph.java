@@ -8,7 +8,8 @@ import yao.algs.stack.LinkedStack;
  * 邻接表实现的图  顶点类+邻接点类
  * <p>
  * 顶点用数组存储
- * 边关系用EdgeNode实现
+ * 顶点对象包含数据和头节点first
+ * 边关系用EdgeNode实现，包含顶点索引和next
  * <p>
  * Created by yaoo on 1/15/18
  */

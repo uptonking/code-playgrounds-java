@@ -61,7 +61,7 @@ public class GraphTest {
     @Test
     public void testPrimMST() throws Exception {
         Integer minWeightSum = graph.primMST();
-        System.out.println(minWeightSum);
+//        System.out.println(minWeightSum);
     }
 
     /**

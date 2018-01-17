@@ -61,7 +61,7 @@ public class GraphTest {
     @Test
     public void testKruskalMST() throws Exception {
         Integer minWeightSum = graph.kruskalMST();
-        System.out.println(minWeightSum);
+//        System.out.println(minWeightSum);
     }
 
     /**

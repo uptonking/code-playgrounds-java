@@ -1,16 +1,17 @@
-package yao.algs.graph.dijkstra;
+package yao.algs.graph.bellmanford;
 
 import yao.algs.list.TwoWayList;
 
 import java.util.Arrays;
 
 /**
- * Dijkstra算法实现的单源最短路径
+ * Bellman-Ford算法实现的单源最短路径
  * <p>
- * 适用于--有向图--，适用于--有环图--，权值(边)不能为负
+ * 适用于--有向图--，适用于--有环图--，权值(边)可以为负
  * 与顶点数据内容无关，只需顶点数组下标
  * <p>
- * 与Prim算法思路类似
+ * 如果存在一个从源结点可以到达的权重为负值的环路，则算法将还会告诉我们不存在解决方案
+ * Bellman-Ford算法就是对每一条边进行|V|-1次的松弛操作
  * <p>
  * Created by yaoo on 1/16/18
  */
@@ -27,10 +28,6 @@ public class Graph {
     //该顶点的前驱顶点，用于松弛操作
     private int[] prev;
 
-    //已求出最短路径的的顶点集合
-    private TwoWayList<Integer> S;
-    //未求出最短路径的的顶点集合
-    private TwoWayList<Integer> U;
 
     //无穷大
     public static final int INFINITY_MAX = Integer.MAX_VALUE;
@@ -95,40 +92,38 @@ public class Graph {
 
     /**
      * 计算从起始顶点start到其余各顶点的最短路径
-     * 改进方法：使用最小堆
      *
      * @param start 起始顶点位置下标
+     * @return 是否有负环
      */
     @SuppressWarnings("unchecked")
-    public void dijkstraShortestPath(int start) {
+    public boolean bellmanFordShortestPath(int start) {
 
         initStartNode(start);
 
-        S = new TwoWayList<>();
-        U = new TwoWayList<>();
-        for (int i = 0; i < vlen; i++) {
-            U.add(i);
-        }
-
-        while (!U.isEmpty()) {
-
-            //从待选顶点中选出起始点最小边的另一顶点
-            int uMin = getMinDsitance(U);
-            //加入已选集
-            S.add(uMin);
-            //从带选集中删除，主要是删除元素，不是索引，要使用对象
-            U.remove(Integer.valueOf(uMin));
-
-            //获取该顶点的邻接表
-            TwoWayList<Edge> list = (TwoWayList<Edge>) edgeLinks[uMin].clone();
-            while (!list.isEmpty()) {
-                Edge edge = list.removeLast();
-
-                //松弛操作
-                relaxEdge(edge);
+        ///计算各顶点到起始点距离
+        for (int i = 0; i < vlen - 1; i++) {
+            for (int j = 0; j < vlen; j++) {
+                TwoWayList<Edge> list = (TwoWayList<Edge>) edgeLinks[j].clone();
+                while (!list.isEmpty()) {
+                    Edge edge = list.removeLast();
+                    relaxEdge(edge);
+                }
             }
         }
 
+        ///添加判断负环的操作
+        for (int i = 0; i < vlen; i++) {
+            TwoWayList<Edge> list = (TwoWayList<Edge>) edgeLinks[i].clone();
+            while (!list.isEmpty()) {
+                Edge edge = list.removeLast();
+                if (distance[edge.v2] > distance[edge.v1] + edge.weight) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
 
@@ -153,10 +148,6 @@ public class Graph {
      * @return 最小距离
      */
     public int getMinDsitance(TwoWayList<Integer> u) {
-
-//        if (u.isEmpty()) {
-//            return -1;
-//        }
 
         int min = u.get(0);
         for (int i = 0; i < u.size(); i++) {

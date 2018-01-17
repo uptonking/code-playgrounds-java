@@ -1,4 +1,4 @@
-package yao.algs.graph.dijkstra;
+package yao.algs.graph.bellmanford;
 
 import org.junit.Test;
 import org.junit.Before;
@@ -9,28 +9,25 @@ import org.junit.After;
  *
  * @author <Authors name>
  * @version 1.0
- * @since <pre>Jan 16, 2018</pre>
+ * @since <pre>Jan 17, 2018</pre>
  */
 public class GraphTest {
-
     private Graph graph;
-
 
     @Before
     public void before() throws Exception {
-
         graph = new Graph(5);
 
-        graph.addEdge(0, 1, 10);
-        graph.addEdge(0, 3, 5);
-        graph.addEdge(1, 2, 1);
-        graph.addEdge(1, 3, 2);
-        graph.addEdge(2, 4, 4);
-        graph.addEdge(3, 1, 3);
-        graph.addEdge(3, 2, 9);
-        graph.addEdge(3, 4, 2);
-        graph.addEdge(4, 0, 7);
-        graph.addEdge(4, 2, 6);
+        graph.addEdge(0, 1, 6);
+        graph.addEdge(0, 3, 7);
+        graph.addEdge(1, 2, 5);
+        graph.addEdge(1, 3, 8);
+        graph.addEdge(1, 4, -4);
+        graph.addEdge(2, 1, -2);
+        graph.addEdge(3, 2, -3);
+        graph.addEdge(3, 4, 9);
+        graph.addEdge(4, 0, 2);
+        graph.addEdge(4, 2, 7);
     }
 
     @After
@@ -45,15 +42,22 @@ public class GraphTest {
 //TODO: Test goes here...
     }
 
-
     /**
-     * Method: dijkstraShortestPath(int start)
+     * Method: bellmanFordShortestPath(int start)
      */
     @Test
-    public void testDijkstraShortestPath() throws Exception {
-        graph.dijkstraShortestPath(0);
-        graph.printShortestPath();
+    public void testBellmanFordShortestPath() throws Exception {
+        int start = 0;
+        boolean spSuccess = graph.bellmanFordShortestPath(start);
+
+        if (spSuccess) {
+            System.out.println("起点索引为：" + start);
+            graph.printShortestPath();
+        } else {
+            System.out.println("图中存在负环，到索引为" + start + "顶点的最短路径不存在");
+        }
     }
+
 
     /**
      * Method: printGraph()
@@ -81,6 +85,14 @@ public class GraphTest {
     }
 
     /**
+     * Method: printShortestPath()
+     */
+    @Test
+    public void testPrintShortestPath() throws Exception {
+//TODO: Test goes here...
+    }
+
+    /**
      * Method: getMinDsitance(TwoWayList<Integer> u)
      */
     @Test
@@ -96,13 +108,6 @@ public class GraphTest {
 //TODO: Test goes here...
     }
 
-    /**
-     * Method: printShortestPath()
-     */
-    @Test
-    public void testPrintShortestPath() throws Exception {
-//TODO: Test goes here...
-    }
 
     /**
      * Method: equals(Object obj)

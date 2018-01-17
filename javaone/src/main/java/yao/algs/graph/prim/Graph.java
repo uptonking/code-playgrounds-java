@@ -9,6 +9,8 @@ import yao.algs.list.TwoWayList;
  * <p>
  * 此图未保存顶点数据，计算最小生成树的重点是边的权值，只需顶点下标
  * <p>
+ * 与Dijkstra思路类似
+ * <p>
  * Created by yaoo on 1/15/18
  */
 @SuppressWarnings("unused")
@@ -114,9 +116,12 @@ public class Graph {
         if (TE.size() == vlen - 1) {
             TwoWayList<Edge> list = (TwoWayList<Edge>) TE.clone();
             int weightSum = 0;
+            int i = 1;
+            System.out.println("边" + "\t" + "起点" + "\t" + "终点" + "\t" + "权值");
             while (!list.isEmpty()) {
                 Edge edge = list.removeLast();
                 weightSum = weightSum + edge.weight;
+                System.out.println(i + "\t" + edge.v1 + "\t" + edge.v2 + "\t" + edge.weight);
             }
             System.out.println("最小生成树总权重为：" + weightSum);
             return weightSum;
@@ -167,8 +172,10 @@ public class Graph {
     @SuppressWarnings("unchecked")
     public void print() {
         System.out.println("图的顶点有：" + vlen + " 个，边有：" + elen + " 条");
+        System.out.println("顶点索引" + "\t" + "邻接点列表[权值]");
 
         for (int i = 0; i < vlen; i++) {
+            System.out.print(i + "\t\t");
 
             TwoWayList<Edge> stack = (TwoWayList<Edge>) edgeLinks[i].clone();
             while (!stack.isEmpty()) {

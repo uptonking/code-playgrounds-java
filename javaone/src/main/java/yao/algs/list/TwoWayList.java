@@ -6,6 +6,9 @@ import java.lang.reflect.Array;
 
 /**
  * 双向链表
+ * <p>
+ * 类似于LinkedList
+ * <p>
  * 优点：删除操作方便
  * 缺点：插入删除操作复杂度增大，空间开销增大
  * Created by yaoo on 1/11/18
@@ -222,6 +225,8 @@ public class TwoWayList<E> extends AbstractCollection<E> {
 
     /**
      * 移除指定位置的元素
+     * <p>
+     * 注意：当链表元素是整数时，要删除元素不要用此方法，要用remove(Object o) !!!
      *
      * @param index 位置索引，第一个为0
      * @return 位置元素

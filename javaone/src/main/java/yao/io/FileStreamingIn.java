@@ -14,7 +14,7 @@ public class FileStreamingIn {
     public static void main(String[] args) {
 
 
-        String filePath = "/root/Documents/repo/play201X/java8/src/main/java/yao/basic/sort/README.md";
+        String filePath = "/root/Documents/repo/play201X/java8/src/main/java/yao/old/sort/README.md";
 
         try (
                 FileInputStream is = new FileInputStream(filePath)

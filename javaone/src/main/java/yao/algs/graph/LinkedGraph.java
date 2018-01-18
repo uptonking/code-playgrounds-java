@@ -98,6 +98,7 @@ public class LinkedGraph<T> implements Graph {
      * 从第i个点开始深度优先遍历
      * <p>
      * 用栈实现
+     * 打印的是出栈顺序
      *
      * @param i 顶点索引位置
      */
@@ -153,6 +154,7 @@ public class LinkedGraph<T> implements Graph {
      * 从第i个点开始广度优先遍历
      * <p>
      * 用队列实现
+     * 打印的是出队顺序
      *
      * @param i 顶点索引位置
      */
@@ -170,18 +172,13 @@ public class LinkedGraph<T> implements Graph {
         while (!queue.isEmpty()) {
 
             i = queue.poll();
-            if (!hasVisited(i)) {
-                if (vertexAll[i].data != null) {
-                    list.add(vertexAll[i].data);
-                }
-                //System.out.print(vertexAll[i].data + "  ");
-                //vertexAll[i].visited = true;
-                visit(i);
-            }
+            list.add(vertexAll[i].data);
+            //System.out.print(vertexAll[i].data + "  ");
+            visit(i);
 
             curNode = vertexAll[i].first;
             while (curNode != null) {
-                if (!hasVisited(curNode.to)) {
+                if (!hasVisited(curNode.to) && !queue.contains(curNode.to)) {
                     queue.offer(curNode.to);
                 }
                 curNode = curNode.next;

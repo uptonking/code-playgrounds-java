@@ -3,6 +3,7 @@ package yao.algs.unionfind;
 
 /**
  * 链表实现的并查集
+ * <p>
  * Created by yaoo on 1/14/18
  */
 @SuppressWarnings("unused")

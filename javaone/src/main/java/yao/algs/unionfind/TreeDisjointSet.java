@@ -2,6 +2,7 @@ package yao.algs.unionfind;
 
 /**
  * 树实现的并查集
+ * <p>
  * Created by yaoo on 1/14/18
  */
 @SuppressWarnings("unused")

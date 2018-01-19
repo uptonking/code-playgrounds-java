@@ -8,10 +8,7 @@ public class FibonacciArray {
 
 
     /**
-     * 计算斐波那契数列的第n个值
-     *
-     * @param intInput
-     * @return
+     * 计算斐波那契数列的第n个值 非递归
      */
     public static int calcFibonacciNonRecursive(int intInput) {
         int n = intInput;
@@ -37,7 +34,7 @@ public class FibonacciArray {
 
 
     /**
-     * 计算斐波那契数列的第n个值
+     * 计算斐波那契数列的第n个值 递归
      *
      * @param intInput
      * @return

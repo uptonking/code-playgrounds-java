@@ -268,6 +268,8 @@ public class SortUtil {
      * 快速排序 空间O(logn) 时间O(n*logn) 不稳定
      * <p>
      * 先比较得出基准值位置，再递归分割
+     *
+     * 注意数组元素相等的情况
      */
     public Comparable[] quickSortRecursive(Comparable[] a) {
 
@@ -280,7 +282,7 @@ public class SortUtil {
     public void quickSort(Comparable[] a, int low, int high) {
 
         //递归中止条件，low在high的左边，也可以相等，都OK
-        if (low > high) {
+        if (low >high) {
             return;
         }
 
@@ -315,10 +317,11 @@ public class SortUtil {
         //默认以第一个作为基准值，在low的位置挖个坑
         Comparable pivotValue = a[low];
 
+        ///找元素的索引位置要注意元素相等的情况
         while (low < high) {
 
             ///从后往前找比基准值大的
-            while (low < high && a[high].compareTo(pivotValue) > 0) {
+            while (low < high && a[high].compareTo(pivotValue) >= 0) {
                 high--;
             }
             //把high的值填到基准值的位置

@@ -5,13 +5,19 @@ import yao.algs.stack.ArrayStack;
 import java.util.Arrays;
 
 /**
- * 8种排序算法
+ * 常用排序算法
  * <p>
  * Created by yaoo on 1/18/18
  */
 public class SortUtil {
 
-    //模板
+
+    /**
+     * 排序算法模板
+     *
+     * @param a 待排序数组
+     * @return 排序后的数组
+     */
     public Comparable[] Sort(Comparable[] a) {
         Comparable[] result;
 

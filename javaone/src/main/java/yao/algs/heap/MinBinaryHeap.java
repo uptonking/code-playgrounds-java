@@ -80,7 +80,7 @@ public class MinBinaryHeap<E extends Comparable<? super E>> implements Heap<E> {
     /**
      * 向上渗透
      *
-     * @param cur 被上调节点的起始位置，一般为数组末尾元素索引，边界条件>0
+     * @param cur 被上调节点的起始位置，一般为数组末尾元素索引，边界条件index>0
      */
     private void percolateUp(int cur) {
 
@@ -96,7 +96,7 @@ public class MinBinaryHeap<E extends Comparable<? super E>> implements Heap<E> {
     /**
      * 向下渗透
      *
-     * @param cur 被下调节点的起始位置，一般为0
+     * @param cur 被下调节点的起始位置，一般为0，边界条件右孩子<size
      */
     private void percolateDown(int cur) {
 

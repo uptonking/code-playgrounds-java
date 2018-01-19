@@ -1,4 +1,4 @@
-package yao.usage.misc;
+package yao.usage.annotation;
 
 /**
  * Created by yaoo on 6/16/17.

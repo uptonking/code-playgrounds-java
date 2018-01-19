@@ -1,4 +1,4 @@
-package yao.usage.misc;
+package yao.usage.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

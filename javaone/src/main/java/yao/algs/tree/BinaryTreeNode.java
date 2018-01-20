@@ -1,7 +1,7 @@
 package yao.algs.tree;
 
 /**
- * 通用二叉树
+ * 通用二叉树节点
  * Created by yaoo on 1/12/18
  */
 public class BinaryTreeNode<E> {

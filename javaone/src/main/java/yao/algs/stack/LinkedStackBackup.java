@@ -4,8 +4,8 @@ import java.lang.reflect.Array;
 
 /**
  * 双向链表实现的栈
- *
- * @param <E>
+ * <p>
+ * 无其他依赖
  */
 @SuppressWarnings("unused")
 public class LinkedStackBackup<E> {

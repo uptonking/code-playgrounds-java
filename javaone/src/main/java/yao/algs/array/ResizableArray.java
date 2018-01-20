@@ -7,6 +7,7 @@ import java.util.Arrays;
 /**
  * Java实现的动态数组，类似于ArrayList
  * 限制：加入的元素不能是null
+ *
  * Created by yaoo on 1/10/18
  */
 @SuppressWarnings("unused")
@@ -14,7 +15,7 @@ public class ResizableArray<E> extends AbstractCollection<E> {
 
     //默认分配的初始大小
     private static final int DEFAULT_CAPACITY = 16;
-    //默认最多元素个数，保留8个
+    //默认最多元素个数，保留8个整数
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
     //通用的空数组
     private static final Object[] EMPTY_ELEMENTDATA = {};

@@ -1,6 +1,8 @@
 package yao.algs;
 
 /**
+ * 集合接口中不常用的方法
+ * <p>
  * Created by yaoo on 1/10/18
  */
 public abstract class AbstractCollection<E> implements Collection<E> {

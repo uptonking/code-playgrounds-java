@@ -1,5 +1,8 @@
 package yao.algs;
 
+/**
+ * 集合通用接口
+ */
 public interface Collection<E> {
 
     boolean add(E e);

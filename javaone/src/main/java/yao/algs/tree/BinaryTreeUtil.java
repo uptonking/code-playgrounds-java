@@ -10,6 +10,7 @@ import yao.algs.stack.ArrayStack;
  * 遍历的返回值用链表存，因为只知道根节点不知道节点总数
  * 静态方法不可以访问类上定义的泛型，如果静态方法操作的应用数据类型不确定，可以将泛型定义在方法上
  * 类似地，静态变量不能带有泛型，因为是多实例共享的
+ * <p>
  * Created by yaoo on 1/12/18
  */
 @SuppressWarnings("unused")
@@ -70,6 +71,7 @@ public class BinaryTreeUtil {
     /**
      * 先序遍历 迭代
      * 利用栈模拟递归，打印顺序用的是入栈顺序
+     * <p>
      * 方法可扩展至中序，将左子树点不断的压入栈，直到null，然后处理栈顶节点的右子树
      */
     @SuppressWarnings("unchecked")
@@ -85,7 +87,8 @@ public class BinaryTreeUtil {
 
             ///节点移动到最左边
             while (curNode != null) {
-                //记录节点数据
+
+                //记录节点数据，打印入栈顺序
                 list.add(curNode.data);
 
                 stack.push(curNode);
@@ -102,6 +105,7 @@ public class BinaryTreeUtil {
     /**
      * 先序遍历 迭代
      * 类似于图的DFS
+     *
      * 是对先序遍历的一种特殊实现，简单明了，但是不具备很好的扩展性，在中序和后序方式中不适用
      */
     @SuppressWarnings("unchecked")
@@ -151,7 +155,8 @@ public class BinaryTreeUtil {
                 curNode = curNode.left;
             }
             curNode = stack.pop();
-            //记录节点数据
+
+            //记录节点数据，打印出栈顺序
             list.add(curNode.data);
             curNode = curNode.right;
         }
@@ -162,7 +167,7 @@ public class BinaryTreeUtil {
 
     /**
      * 后序遍历 迭代
-     * 不同于先序遍历和中序遍历，先处理左右子树，再回溯根，难点在于需要记录已经访问的节点
+     * 不同于先序遍历和中序遍历，这里先处理左右子树，再回溯根，难点在于需要记录已经访问的节点
      */
     @SuppressWarnings("unchecked")
     public <E> ResizableArray<E> traversePostOrderIterative(BinaryTreeNode<E> root) {
@@ -199,8 +204,9 @@ public class BinaryTreeUtil {
                     curNode = curNode.left;
                 }
 
-                ///右子树不存在时，直接打印该节点
             } else {
+
+                ///右子树不存在时，直接打印该节点
                 list.add(curNode.data);
                 prevNode = curNode;
             }
@@ -226,11 +232,14 @@ public class BinaryTreeUtil {
         BinaryTreeNode<E> curNode;
 
         while (!queue.isEmpty()) {
+
             curNode = queue.poll();
             list.add(curNode.data);
+
             if (curNode.left != null) {
                 queue.offer(curNode.left);
             }
+
             if (curNode.right != null) {
                 queue.offer(curNode.right);
             }

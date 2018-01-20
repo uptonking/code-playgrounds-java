@@ -4,8 +4,6 @@ import yao.algs.array.ResizableArray;
 
 /**
  * 数组实现的栈
- *
- * @param <E>
  */
 @SuppressWarnings("unused")
 public class ArrayStack<E> extends ResizableArray<E> {

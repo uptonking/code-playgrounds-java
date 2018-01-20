@@ -4,8 +4,8 @@ import yao.algs.list.TwoWayList;
 
 /**
  * 双向链表实现的栈
- *
- * @param <E>
+ * <p>
+ * 依赖于双向链表类
  */
 @SuppressWarnings("unused")
 public class LinkedStack<E> extends TwoWayList<E> {

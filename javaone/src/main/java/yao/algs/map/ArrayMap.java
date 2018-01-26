@@ -3,7 +3,6 @@ package yao.algs.map;
 import yao.algs.list.TwoWayList;
 
 
-
 /**
  * 数组实现的哈希表
  * <p>
@@ -65,7 +64,7 @@ public class ArrayMap<K, V> implements IMap<K, V> {
     public V put(K key, V value) {
 
         if (size > thresholdMax * loadFactor) {
-            grow();
+            resize();
         }
 
         //根据key算出对应的数组下标
@@ -249,7 +248,13 @@ public class ArrayMap<K, V> implements IMap<K, V> {
         return getEntryValue(entry.next, key);
     }
 
-    public void grow() {
+
+    /**
+     * 动态扩容
+     * <p>
+     * todo 限制容量上界
+     */
+    private void resize() {
         Entry<K, V>[] newArray = new Entry[thresholdMax * 2];
 
         TwoWayList<Entry<K, V>> list = new TwoWayList<>();

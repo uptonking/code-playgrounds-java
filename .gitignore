@@ -12,3 +12,4 @@ package-lock.json
 *.pyc
 
 res/
+kaggle/mobike/src/main/resources/public/dataseeds/

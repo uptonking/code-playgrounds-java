@@ -1,23 +1,14 @@
-
-*.json
-
-*.class
-*.pom
-*.pyc
-
-.git
-.idea
+.idea/
 *.iml
 .settings
 *.classpath
 .project
-target
-node_modules
 
-res
+target/
 
-SparkGuide/minimal/project/project/
-SparkGuide/minimal/src/main/scala/space/yaooxx/start/
-java8/src/main/resources/
-java8/src/test/java/yao/basic/linear/queue/
-ria2/examples/
+node_modules/
+package-lock.json
+
+*.pyc
+
+res/

@@ -1,5 +1,9 @@
 package yao.usage.init;
 
+/**
+ * 实例变量的声明赋值会被构造函数赋值覆盖
+ * 实例方法可以多态，但实例变量没有多态
+ */
 public class Base {
 
     private String baseName = "base";

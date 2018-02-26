@@ -12,3 +12,5 @@ package-lock.json
 *.pyc
 
 res/
+kaggle/mobike/src/main/resources/public/dataseeds/mobike_testing.json
+kaggle/mobike/src/main/resources/public/dataseeds/mobike_training.json

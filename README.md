@@ -4,7 +4,7 @@ code playing during 201x
 ## javaone
 
 - algs包 数据结构  
-  - array
+  - array
   - list
   - stack
   - queue
@@ -13,13 +13,13 @@ code playing during 201x
   - heap
   - unionfind
   - map
- 
- - algs包 常用算法
- 
-  - sort包 排序算法 10+种
-  
-  - search包 查找算法 5+种
-  
+
+- algs包 常用算法
+
+- sort包 排序算法 10+种
+
+- search包 查找算法 5+种
+
 - gof包 设计模式
 
 - leetcode包 刷题记录

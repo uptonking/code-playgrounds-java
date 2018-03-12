@@ -3,7 +3,7 @@ code playing during 201x
 
 ## javaone
 
-- algs包 数据结构
+- algs包 数据结构  
   - array
   - list
   - stack
@@ -15,12 +15,14 @@ code playing during 201x
   - map
  
  - algs包 常用算法
-  - sort 
-  - search
+ 
+  - sort包 排序算法 10+种
+  
+  - search包 查找算法 5+种
   
 - gof包 设计模式
 
-- leetcode 刷题记录
+- leetcode包 刷题记录
 
 ## jsone
 js练习
@@ -35,7 +37,7 @@ d3-3.x实例
 d3 新版本实例
 
 ## leaflet
-leaflet练习
+leaflet实例
 
 ## mapbox 
-mapbox练习
+mapbox-gl-js, turf.js实例

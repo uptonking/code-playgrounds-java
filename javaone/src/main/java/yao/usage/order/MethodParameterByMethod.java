@@ -18,7 +18,11 @@ public class MethodParameterByMethod {
 
         int x = 1;
 
-        int y = product(x, (Add) (a, b) -> a + b + devidedBy2());
+        int y = product(x, (Add) (a, b) -> {
+
+            System.out.println("==lambda方法内部");
+            return (a + b + devidedBy2());
+        });
 
         System.out.println("====c1 计算完成时:" + c1);
 

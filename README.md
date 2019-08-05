@@ -1,9 +1,8 @@
-# play201x
-code playing during 201x
+# code-playing
+my code playgrounds for learning, practicing and testing
 
-## javaone
-
-- algs包 数据结构  
+## java-playing
+- algs包：数据结构和算法
   - array
   - list
   - stack
@@ -13,29 +12,25 @@ code playing during 201x
   - heap
   - unionfind
   - map
+  - sort 排序算法 10+
+  - search 查找算法 5+
+- gof包：设计模式
+- leetcode包：leetcode刷题
+- offer包：剑指offer刷题
 
-- algs包 常用算法
-  - sort 排序算法 10+种
-  - search 查找算法 5+种
+## js-playing
+- es6练习
+- typescript练习
 
-- gof包 设计模式
+## web-playing
+- css练习
 
-- leetcode包 刷题记录
+## python-playing
+- python练习
+- flask框架
 
-## jsone
-js练习
+## spreadsheet-playing
+- excel练习
 
-## pythonone
-python练习
 
-## d3v3
-d3-3.x实例
 
-## d3new
-d3 新版本实例
-
-## leaflet
-leaflet实例
-
-## mapbox 
-mapbox-gl-js, turf.js实例

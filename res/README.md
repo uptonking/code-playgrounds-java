@@ -1,2 +1,2 @@
-# RES
-resources for test or runtime
+# res
+- resources for test  

@@ -1,14 +1,17 @@
 .idea/
 *.iml
+
 .settings
 *.classpath
 .project
 
 target/
+*.war
 
 node_modules/
 package-lock.json
+yarn.lock
 
 *.pyc
 
-res/
+enormous/

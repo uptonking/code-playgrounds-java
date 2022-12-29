@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>yao</groupId>
-    <artifactId>javaone</artifactId>
+    <artifactId>jplay</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>javaone</name>
+    <name>jplay</name>
 
     <properties>
         <project.build.sourceEncoding2>UTF-8</project.build.sourceEncoding2>
